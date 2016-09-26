@@ -1,0 +1,26 @@
+{
+  "name": "song",
+  "version": "1.0.0",
+  "description": "hexo-theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test"
+  },
+  "keywords": [
+    "hexo",
+    "gulp"
+  ],
+  "author": "song",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3"
+  }
+}

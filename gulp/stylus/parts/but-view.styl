@@ -1,0 +1,26 @@
+#btn-view {
+    color: #c8f7c5;
+    text-align: center;
+    background-color: #1e824c;
+    border-radius: 50%;
+    line-height: 40px;
+    display: block;
+    position: absolute;
+    top 50%
+    margin-top -20px
+    margin-left 10%
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+    mytransition(1s);
+    &:hover {
+        opacity: 0.75;
+        box-shadow: 0 0px 10px 5px rgba(46,204,113,0.9);
+    }
+    @media (max-width: 400px){
+        &{
+            margin-left -5px;
+        }
+    }
+}

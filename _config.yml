@@ -1,0 +1,37 @@
+
+# html lang
+language: zh-cn
+
+# main menu navigation
+menu:
+  Home: /
+  Archives: archives
+  Tags: tags
+  Categories: categories
+  About: about
+
+social:
+  GitHub: https://github.com/songjinzhong
+
+# Google analytics
+google_analytics:
+# Baidu tongji
+baidu_analytics:
+# Duoshuo
+duoshuo_shortname:
+# Disqus
+disqus_shortname:
+# Uyan
+uyan_id:
+
+# Miscelaneous
+favicon: images/favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/all.min.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery-3.1.0.min.js
+- /js/all.min.js
