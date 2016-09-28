@@ -14,7 +14,8 @@ var paths={
     gulp_js : "gulp/js/*.js",
     stylus : "gulp/stylus/*.styl",
     css : "source/css",
-    js : "source/js"
+    js : "source/js",
+    gulp_static : "gulp/static/*.js"
 }
 
 // 检查脚本
@@ -43,6 +44,11 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(paths.js));
 });
 
+//移动库文件
+gulp.task('static', function(){
+	gulp.src(paths.gulp_static)
+		.pipe(gulp.dest(paths.js));
+});
 
 //监听文件变化
 gulp.task('watch',function(){
@@ -51,4 +57,4 @@ gulp.task('watch',function(){
 });
 
 //default
-gulp.task('default',['jshint','scripts','stylus','watch'])
+gulp.task('default',['jshint','scripts','stylus','static','watch'])
