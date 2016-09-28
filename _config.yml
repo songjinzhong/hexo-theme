@@ -13,19 +13,12 @@ menu:
 social:
   GitHub: https://github.com/songjinzhong
 
-# Google analytics
-google_analytics:
-# Baidu tongji
-baidu_analytics:
-# Duoshuo
-duoshuo_shortname:
-# Disqus
-disqus_shortname:
-# Uyan
-uyan_id:
-
 # Miscelaneous
 favicon: images/favicon.ico
+
+# categories that important
+categories:
+- JavaScript
 
 # stylesheets loaded in the <head>
 stylesheets:
