@@ -1,1 +1,1 @@
-<div id="btn-view">隐藏</div>
+<div id="btn-close"></div>

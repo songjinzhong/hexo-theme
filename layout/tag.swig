@@ -2,8 +2,6 @@
 
 {% block body %}
 
-{% if is_tag() %}
-	{{page.tag}}
-{% endif %}
+this is tag
 
 {% endblock %}

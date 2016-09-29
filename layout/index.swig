@@ -3,26 +3,25 @@
 	{% include 'includes/head.swig' %}
 	<body class="homebody">
 	{% include 'includes/svg.swig' %}
-	{% include 'includes/but-view.swig' %}
 	{% include 'includes/footer.swig' %}
 	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
 	<script type="text/javascript">
-	(function(){
-		$("#btn-view").on('click', showHideToggle);
-		var hideAll = false;
-		function showHideToggle() {
-			if(hideAll) {
-			    $(".hide").show();
-			    $("#btn-view").html('隐藏');
-			    $("#btn-view").css({'top':'50%'});
-			} else {
-			    $(".hide").hide();
-			    $("#btn-view").html('显示');
-			    $("#btn-view").css({'top':'90%'});
+		(function(){
+			$("#btn-close").on('click', showHideToggle);
+			var hideAll = false;
+			function showHideToggle() {
+				if(hideAll) {
+					$("header").removeAttr('style');
+					$("#btn-close").removeAttr('style');
+				    $(".hide").show();
+				} else {
+					$("header").height($("header").height()).css({    'background': 'rgba(0,0,0,0)'});
+					$("#btn-close").css({'transform': 'rotate(45deg)'});
+				    $(".hide").hide();
+				}
+				hideAll = !hideAll;
 			}
-			hideAll = !hideAll;
-		}
-	})();
+		})();
 	</script>
 	</body>
 </html>

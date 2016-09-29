@@ -132,12 +132,12 @@
 		<svg id="hello" viewBox="0 0 32 32"><use xlink:href="#hi"></use></svg>
 		</a>
 		<div id="visit">
-			<p>腾讯公益404</p>
+			<p>公益404</p>
   			<div id="arrow"></div>
   		</div>
 	</div>
 	<header>
-		<div id="tishi"></div>
+		{% include 'but-view.swig' %}
 		<span class="header hide" data-text="宋进忠"><p class="left">渔</p><p class="right">人</p></span>
 		<span class="about hide"><div><p data="浏览器、HTTP、CSS、JS、NodeJs、框架、框架、框架...">前端er</p></div><div><p data="上海、华东师范大学、计软学院、研究生、南京、实习...">学生</p></div><div><p data="写代码、Debug、改bug、狂论坛、学新技术、自黑...">程序员</p></div></span>
 		<div id="link" class="hide">
