@@ -1,3 +1,7 @@
+::selection {
+    background: #fde6ba;
+    color: #000;
+}
 a{
 	color #F19483
 	text-decoration none
@@ -12,5 +16,14 @@ h1,h2,h3{
 			text-decoration none
 			color #9E7A7A
 		}
+	}
+}
+
+.clear{
+	&:after{
+		content: '\20';
+	    display: block;
+	    height: 0;
+	    clear: both;
 	}
 }

@@ -1,12 +1,21 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-	<div id="blog-content">
-		{% include 'includes/overview.swig' %}
-		<div class="content">
-			{% include 'includes/article_sort.swig' %}
-			{% include 'includes/weibo.swig' %}
-			{% include 'includes/recent-posts.swig' %}
+	<div id="blog-content" class="clear">
+		<h1 class="overview clear">
+			{% include 'includes/overview.swig' %}
+		</h1>
+		<div class="content clear">
+			<div class="left-part clear">
+				{% include 'includes/article_sort.swig' %}
+				{% include 'includes/weibo.swig' %}
+			</div>
+			<div class="recent-one">
+				{% include 'includes/recent-one.swig' %}
+			</div>
+			<div class="recent-posts">
+				{% include 'includes/recent-posts.swig' %}
+			</div>
 		</div>
 		<div class="duoshuo-part">
 			{#% include 'includes/duoshuo.swig' %#}
