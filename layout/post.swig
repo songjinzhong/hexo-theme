@@ -1,5 +1,5 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-  post
+  {{page.path}}
 {% endblock %}

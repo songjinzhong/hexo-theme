@@ -28,3 +28,6 @@ stylesheets:
 scripts:
 - /js/jquery-3.1.0.min.js
 - /js/all.min.js
+
+# duoshuo name
+duoshuo: aaa
