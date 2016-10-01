@@ -42,7 +42,7 @@
                     margin-bottom 15px
                 }
                 & ul{
-                    list-style-type disc
+                    list-style-type circle
                     padding-left 20px
                     & li{
                         line-height 28px
@@ -59,11 +59,81 @@
          * right part recent-one   
          */
         & .recent-one{
-            width 590px
-            padding 20px
+            float right
+            width 620px
+            padding 15px
             background #f3f3f3
             border-radius 2px
             box-shadow 2px 2px 4px #e2e2e2
+            & h3{
+                font-size 22px
+                line-height 2
+                border-bottom 1px dashed #ccc
+                margin-left 15px
+            }
+            & .post-info{
+                display block
+                font-size: 14px;
+                color: #999;
+                line-height 1.5
+                margin 5px 0 10px 0
+            }
+            & .post-content{
+                & .post-image{
+                    float: right;
+                    width: 120px;
+                    margin-left 10px
+                    margin-top -20px
+                    max-height 150px
+                    overflow: hidden;
+                }
+                & p{
+                    font-size: 15px;
+                    line-height: 30px;
+                    text-indent: 2em;
+                    padding-bottom: 15px;
+                    margin-bottom: 15px;
+                    border-bottom: 1px dashed #ccc;
+                }
+            }
         }
+        & .recent-posts{
+            float right
+            margin-bottom 30px
+            width 620px
+            padding 15px
+            & h2{
+                font-size: 22px;
+                font-weight: normal;
+                border-bottom: 1px dashed #ccc;
+                max-width: 100%;
+                line-height: 2;
+                margin-bottom: 15px;
+                margin-top: 40px;
+                & a{
+                    float right
+                    font-size 14px
+                    margin-top 10px
+                }
+            }
+            & ul{
+                padding-left 30px
+                list-style-type: disc;
+                & li{
+                    line-height 28px
+                    margint-bottom 5px
+                    & span{
+                        color #999
+                    }
+                }
+            }
+        }
+    }
+    /*
+     * duoshuo part css   
+     */
+    & .duoshuo-part{
+        margin-top 30px
+        clear both
     }
 }

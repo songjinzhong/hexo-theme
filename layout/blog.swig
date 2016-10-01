@@ -6,7 +6,7 @@
 			{% include 'includes/overview.swig' %}
 		</h1>
 		<div class="content clear">
-			<div class="left-part clear">
+			<div class="left-part">
 				{% include 'includes/article_sort.swig' %}
 				{% include 'includes/weibo.swig' %}
 			</div>
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="duoshuo-part">
-			{#% include 'includes/duoshuo.swig' %#}
+			{% include 'includes/duoshuo.swig' %}
 		</div>
 		{% include 'includes/web-info.swig' %}
 	</div>

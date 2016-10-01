@@ -9,7 +9,7 @@
  	{% set num = 0 %}
  	{% for postItem in sort_posts %}
 	 	{% if num < 9 %}
-	 	<li style="list-style:circle">
+	 	<li>
 	 		<span>{{ date(postItem.date, 'YYYY-MM-DD') }} » </span>
 	 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
 	 		<a href="{{ config.root }}{{ postItem.path }}">

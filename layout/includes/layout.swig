@@ -3,4 +3,6 @@
 {% include 'head.swig' %}
 <body>
     {% block body %}{% endblock %}
-{% include 'footer.swig' %}
+	{% include 'footer.swig' %}
+</body>
+</html>

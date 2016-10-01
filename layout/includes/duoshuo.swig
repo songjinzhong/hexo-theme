@@ -3,6 +3,7 @@
 {% set url = config.url + config.root + page.path %}
 
 <div class="ds-thread" data-thread-key="{{key}}" data-title="{{title}}" data-url="{{url}}"></div>
+{% include 'duoshuo_css.swig' %}
 <script type="text/javascript">
     var duoshuoQuery = {short_name:"{{theme.duoshuo}}"};
     (function() {

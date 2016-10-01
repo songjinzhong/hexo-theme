@@ -4,19 +4,19 @@
 	{% set postTitle = firstPost.title || trim(strip_html(firstPost.content))  %}
 	<h3>
 		<a href="{{ config.root }}{{ firstPost.path }}">
-			{% if postTitle.length < 80 %}
+			{% if postTitle.length < 20 %}
 				{{ postTitle }}
 			{% else %}
-			    {{ truncate( postTitle, {length: 80}) }}
+			    {{ truncate( postTitle, {length: 20}) }}
 			{% endif %}
 		</a>
 	</h3>
-	<p class="page-title-sub">
+	<span class="post-info">
 	    {# 显示时间 #}
-	    <span id = "page-title-date">{{ date(firstPost.date, 'M-D') }}</span>
+	    <span>{{ date(firstPost.date, 'M-D') }}</span>
 	    {% if firstPost.categories.length %}
 	    {# 组织分类的链接列表 #}
-	    <span id = "post-title-categories">{{ __('category_title') }}
+	    <span>{{ __('category_title') }}
 	    {% set i = 0 %}
 	    {% for cat in firstPost.categories %}
 	      {% if i !== 0 %}
@@ -29,7 +29,7 @@
 	    {% endif %}
 	    {# 组织标签的链接列表 #}
 	    {% if firstPost.tags.length %}
-	    <span id = "post-title-tags">
+	    <span>
 	    {{ __('tag_title') }}
 	    {% set i = 0 %}
 	    {% for tag in firstPost.tags %}
@@ -41,21 +41,19 @@
 	    {% endfor %}
 	    </span>
 	    {% endif %}
-	    {# 有些在文章的头部指定了照片，也显示出来 #}
+	</span>
+	<div class="post-content">
+		{# 有些在文章的头部指定了照片，也显示出来 #}
 	    {% if firstPost.photos %}
-	      <br>
-	      {% set i = 0 %}
-	      {% for photo in firstPost.photos %}
-	        {% set i = i + 1 %}
-	        {% if i <= 3 %}
-	          {# 这里使用了 fancybox 的一些功能，具体后面了解 #}
-	          <a class="fancybox-thumb" rel="fancybox-thumb" href="{{photo}}">
-	            <img src="{{photo}}" />
-	          </a>
-	        {% endif %}
-	      {% endfor %}
+	    	<a class="post-image" href="{{ config.root }}{{ firstPost.path }}">
+		    	{% if firstPost.photos.length > 1 %}
+		    		<img src="{{ firstPost.photos[1] }}" />
+		    	{% else %}
+		    		<img src="{{ firstPost.photos[0] }}"/>
+		    	{% endif %}   		
+	    	</a>
 	    {% endif %}
-	</p>
-	<p>{{ truncate(firstPost.content,{length: 200}) }}<a href="{{ url_for(firstPost.path) }}">阅读全文 <font>»</font></a>
-	</p>
+		<p>{{ strip_html(truncate(firstPost.content, {length : 180})) }}<a href="{{ url_for(firstPost.path) }}">阅读全文 <font>»</font></a>
+		</p>
+	</div>
 {% endif %}
