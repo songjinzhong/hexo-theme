@@ -9,10 +9,6 @@
     background:#F3F3F3 !important;
     }
 
-    .footer-wraper .ds-post:hover {
-    background:#4C4C4C !important;
-    }
-
     #ds-thread #ds-reset .ds-comments {border-bottom:none; padding: 15px 0;}
 
     #ds-thread #ds-reset .ds-powered-by {display:none;}
@@ -34,8 +30,6 @@
     visibility: hidden;
     }
 
-
-    // duoshuo
     #ds-thread #ds-reset .ds-comments {
     border-bottom: none;
     }
@@ -88,11 +82,6 @@
     display: block;
     }
 
-    .footer #ds-thread #ds-reset .ds-meta {
-    margin-top: -25px;
-    text-align: left;
-    }
-
     #ds-thread #ds-reset img  {
     transition: all 0.3s;
     }
@@ -107,23 +96,12 @@
     z-index: 3;
     }
 
-    .footer #ds-reset {
-    position: relative;
-    }
-
-    .footer #ds-thread #ds-reset .ds-comment-body p {
-    color: #CCC;
-    }
-
     div#ds-thread #ds-reset .ds-comment-body {
     color: #555;
     }
 
-    #ds-thread #ds-reset .ds-replybox {
-    margin-bottom: 40px;
-    }
 
-    #ds-thread #ds-reset .ds-comment-body a[data-user-id='2300830']::after {
+    #ds-thread #ds-reset .ds-comment-body a[data-user-id='6314610027441160961']::after {
     content: "博主";
     border: 1px solid #e58c7c;
     border-radius: 2px;
@@ -135,10 +113,6 @@
     display: inline-block;
     }
 
-
-
-
-    /* 改善视觉，增大 */
     .ds-post-reply, .ds-post-repost {
     display: none;
     }
@@ -176,9 +150,43 @@
     overflow: hidden;
     }
 
-    div#ds-thread #ds-reset .ds-replybox {
-    margin-bottom: 180px;
+    /*
+     * my css here
+     */
+    /*
+    div#ds-thread #ds-reset{
+        margin-bottom: 130px
     }
+    div#ds-thread #ds-reset .ds-comments-info{
+        padding-top: 311px;
+        border-bottom: 1px solid rgba(0,0,0,0.13);
+    }
+    div#ds-thread #ds-reset .ds-comments-info .ds-sort{
+        top:311px;
+    }
+    div#ds-thread #ds-reset .ds-replybox{
+        position: absolute;
+        top:77px;
+        width: calc(100% - 60px)
+    }
+    div#ds-thread #ds-reset .ds-login-buttons{
+        position: absolute;
+        top:40px;
+    }
+    div#ds-thread #ds-reset .ds-toolbar{
+        position: absolute;
+        top:40px;
+    }
+
+    div#ds-thread #ds-reset .ds-replybox.ds-inline-replybox{
+        position: relative;
+        top:0px;
+        width: auto;
+    }*/
+
+    /*
+     * my css over
+     */
 
     div#ds-thread #ds-reset .ds-post-toolbar {
     box-shadow: none;
@@ -213,15 +221,6 @@
     div#ds-thread #ds-reset .ds-comment-body p {
     white-space: pre-wrap;
     font-family:consolas !important;
-    }
-
-    div.footer #ds-thread #ds-reset .ds-meta,
-    div.footer #ds-thread #ds-reset .ds-comments-info {
-    display: none;
-    }
-
-    div.footer #ds-thread #ds-reset .ds-comments {
-    padding: 0;
     }
 
     #ds-thread #ds-reset .ds-paginator a {
