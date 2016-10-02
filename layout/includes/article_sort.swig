@@ -11,7 +11,7 @@
 					{% set id = id - 1 %}
 					{% endif %}
 				{% endfor %}
-				<li><a href="{{ url_for('/blog/categories') }}">More...</a></li>
+				<li><a href="{{ url_for('/blog/categories') }}">{{__('more_archives')}}...</a></li>
       	{% endif %}
 	</ul>
 </div>

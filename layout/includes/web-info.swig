@@ -1,6 +1,6 @@
 <div class="web-info">
-    Copyright © 2016-2018本站由
-    <a href="#">{{config.title}}</a>
+    Copyright © 2016-2018,本站由
+    <a href="#">本人</a>
     手工打造,历时2周,
     <a href="#">联系方式</a>
     <span>

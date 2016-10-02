@@ -91,11 +91,6 @@
     transition: all 0.3s;
     }
 
-    #ds-thread #ds-reset a.ds-like-thread-button {
-    position: relative;
-    z-index: 3;
-    }
-
     div#ds-thread #ds-reset .ds-comment-body {
     color: #555;
     }

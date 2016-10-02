@@ -1,6 +1,7 @@
 #blog-content{
     margin 50px auto 10px
     max-width 1000px
+    
     /*
      * overview css is here!
      */
@@ -112,8 +113,10 @@
                 margin-top: 40px;
                 & a{
                     float right
-                    font-size 14px
+                    font-size 18px
                     margin-top 10px
+                    font-weight bold
+                    font-style italic
                 }
             }
             & ul{
@@ -150,6 +153,89 @@
         font-size 14px
         & a{
             color #4a75b5
+        }
+    }
+    /*
+     * max-width 1001px   
+     */
+    @media (max-width: 1001px){
+        max-width 650px
+        & .content{
+            & .left-part{
+                & .archives_sort{
+                    width 618px
+                    & ul{
+                        padding-left 0
+                        & li{
+                            display inline-block
+                            margin 0 10px
+                            &:last-child{
+                                & a{
+                                    text-decoration underline
+                                }
+                            }
+                        }
+                    }
+                }
+                & .weibo-frame{
+                    display none
+                }
+            }
+        }
+    }
+    /*
+     * max-width 801px
+     */
+    @media (max-width: 801px){
+        max-width 600px
+        & .content{
+            & .left-part{
+                & .archives_sort{
+                    width 568px
+                }
+            }
+            & .recent-one,.recent-posts{
+                width 568px
+            }
+        }
+        & .web-info span{
+            display none
+        }
+    }
+    /*
+     * max-width 641px   
+     */
+    @media (max-width: 641px){
+        width 100%
+        box-sizing border-box
+        padding 0 10px
+        min-width 200px
+        & .overview .web-feed{
+            margin-right 10px
+        }
+        & .content{
+            box-sizing border-box
+            width 100%
+            & .left-part{
+                box-sizing border-box
+                width 100%
+                & .archives_sort{
+                    box-sizing border-box
+                    width 100%
+                }
+            }
+            & .recent-one,.recent-posts{
+                box-sizing border-box
+                width 100%
+            }
+            & .recent-one .post-content{
+                & .post-image{
+                    margin-top 0px
+                }
+                & p{
+                    text-indent 0
+                }
+            }
         }
     }
 }
