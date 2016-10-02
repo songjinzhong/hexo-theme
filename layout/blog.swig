@@ -1,7 +1,7 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-	<div id="blog-content" class="clear">
+	<div class="blog-content clear">
 		<h1 class="overview clear">
 			{% include 'includes/overview.swig' %}
 		</h1>

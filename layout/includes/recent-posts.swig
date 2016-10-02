@@ -13,10 +13,10 @@
 	 		<span>{{ date(postItem.date, 'YYYY-MM-DD') }} » </span>
 	 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
 	 		<a href="{{ config.root }}{{ postItem.path }}">
-	 			{% if postTitle.length < 80 %}
+	 			{% if postTitle.length < 40 %}
 	            	{{ postTitle }}
 	          	{% else %}
-	            	{{ truncate( postTitle, {length: 80}) }}
+	            	{{ truncate( postTitle, {length: 40}) }}
 	          	{% endif %}
 	 		</a>
           </a>
