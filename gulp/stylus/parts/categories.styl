@@ -1,5 +1,8 @@
 .categories{
-    max-width 850px
+    max-width 870px
+    min-width 200px
+    box-sizing border-box
+    padding 0 10px
     & .cate-content{
         width 100%
         & .cate-header{
@@ -21,8 +24,43 @@
                 list-style-type: none;
                 & li{
                     display inline-block
-                    margin 0 10px
+                    padding 0 7px
+                    margin 0 3px
                     line-height 28px
+                }
+                & li.cate-choose{
+                    background #aad2f0
+                }
+            }
+        }
+        & .cate-detail{
+            margin-bottom 20px
+            & h3{
+                border-bottom: 1px dashed #aaa;
+                line-height: 30px;
+                text-align: center;
+                padding 5px
+                & a{
+                    font-size 25px
+                }
+                & span{
+                    font-size 16px
+                }
+            }
+            & ul{
+                margin: 20px 0 20px 30px;
+                list-style-type: square;
+                & li{
+                    margin-bottom: 5px;
+                    list-style-type: square;
+                    line-height: 28px;
+                    font-size: 16px;
+                    & span{
+                        font-size 14px
+                    }
+                    & span a{
+                        color #4a75b5
+                    }
                 }
             }
         }

@@ -11,10 +11,10 @@ var my_fun = {
 			}
 		}
 	}
-}
-!function(){
+};
+$(function(){
 	my_fun.init();
-}();
+});
 $(window).on("resize", function() {
     my_fun.insertWeiBo();
 });
