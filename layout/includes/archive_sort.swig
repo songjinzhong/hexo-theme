@@ -2,13 +2,17 @@
 <div class="cate-header">
 	<h2>
 		{% if is_archive() %}
-			归档分类
-		{% else %}
-			文章分类
+			{{__('arc_sort')}}
+		{% elseif is_tag() %}
+			{{__('tag_sort')}}
+		{% elseif is_category() or page.layout === 'categories'%}
+			{{__('cat_sort')}}
 		{% endif %}
 	{% if is_archive() %}
 		<a href="{{config.root}}{{config.category_dir}}">{{__('show_cate')}}</a>
-	{% elseif is_category or page.layout == categories %}
+	{% elseif is_category() or page.layout == 'categories' %}
+		<a href="{{config.root}}{{config.archive_dir}}">{{__('show_arch')}}</a>
+	{% elseif is_tag() %}
 		<a href="{{config.root}}{{config.archive_dir}}">{{__('show_arch')}}</a>
 	{% endif %}
 	</h2>
@@ -19,6 +23,16 @@
 						<li>
 							<a href="{{ url_for('/blog/categories/'+a.name) }}">{{a.name}}</a>
 						</li>
+					{% endfor %}
+				{% elseif is_tag() %}
+					{% for tag in site.tags %}
+						{% if tag.name == page.tag %}
+						<li class="cate-choose">
+						{% else %}
+							<li>
+						{% endif %}
+							<a href="{{config.root}}{{config.tag_dir}}/{{tag.name}}">{{tag.name}}</a>
+						<li>
 					{% endfor %}
 				{% elseif is_category() %}
 					{% for a in site.categories %}
@@ -46,6 +60,9 @@
 							</li>
 						{% endif %}
 					{% endfor %}
+					{% if is_year() %}
+						<li class="cate-all"><a href="{{config.root}}{{config.archive_dir}}">{{__('all_archives')}}</a></li>
+					{% endif %}
 				{% endif %}
       	{% endif %}
 	</ul>
@@ -67,6 +84,12 @@
 	      				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
 	      			{% endif %}
 	      		{% endfor %}
+	      	{% elseif is_tag() %}
+	      		{% for tag in postItem.tags %}
+	      			{% if tag.name == page.tag %}
+	      				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
+	      			{% endif %}
+	      		{% endfor %}
 	      	{% elseif is_archive() %}
 	      		{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
 	      	{% endif %}
@@ -82,6 +105,10 @@
 	    				{% set now_year = true %}
 	    			{% endif %}
 	    		{% endif %}
+	    		{% if lastMonth !== '00' %}
+	    			</ul>
+	    		{% endif %}
+	    		{% set lastMonth = '00' %}
 	    		{% if lastYear != '0000' and !is_year()%}
 	    			</ul>
 	    		{% endif %}
@@ -112,6 +139,14 @@
 	    			{% endif %}
 	    		{% endfor %}
 	    	{% endif %}
+	    	{% set tag_flag = false %}
+			{% if is_tag() %}
+	    		{% for tag in postItem.tags %}
+	    			{% if tag.name == page.tag %}
+	    				{% set tag_flag = true %}
+	    			{% endif %}
+	    		{% endfor %}
+	    	{% endif %}
 	    	{% set arch_flag = false %}
 	    	{% if is_year() %}
 	    		{% set postyear = date(postItem.date, 'YYYY') %}
@@ -121,15 +156,15 @@
 	    	{% elseif is_archive() %}
 	    		{% set arch_flag = true %}
 	    	{% endif %}
-	    	{% if page.layout == 'categories' or cate_flag or arch_flag%}
-	    		{% if is_year() %}
+	    	{% if page.layout == 'categories' or cate_flag or tag_flag or arch_flag%}
+	    		{% if is_archive() %}
 			    	{% set thisMonth = date(postItem.date, 'MM') %}
 			    	{% if lastMonth !== thisMonth %}
 			    		{% if lastMonth !== '00' %}
 			    			</ul>
 			    		{% endif %}
 			    		{% set lastMonth = thisMonth %}
-			    		<h4>{{thisMonth}}</h4>
+			    		<h4>{{thisMonth}}{{__('month')}}</h4>
 			    		<ul>
 			    	{% endif %}
 					<li>
@@ -181,5 +216,8 @@
 		 	{% endif %}
 	    {% endfor %}
 	    </ul>
+	    {% if is_archive() %}
+	    	</ul>
+	    {% endif %}
 	{% endif %}
 </div>

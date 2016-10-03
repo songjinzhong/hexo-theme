@@ -1,15 +1,12 @@
 {% set pageTitle = page.title || config.subtitle || '' %}
 {% if is_archive() %}
-  {% set pageTitle = _p('archive_title') %}
+  {% set pageTitle = _p('article_arc') %}
 {% endif %}
 {% if is_tag() %}
   {% set pageTitle = __('tag_title') + ': ' + page.tag %}
 {% endif %}
 {% if is_category() %}
   {% set pageTitle = __('category_title') + ': ' + page.category %}
-{% endif %}
-{% if is_month() %}
-  {% set pageTitle = pageTitle + ': ' + page.month + '/' + page.year %}
 {% endif %}
 {% if is_year() %}
   {% set pageTitle = pageTitle + ': ' + page.year %}
@@ -23,7 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endif %}
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
   {% if config.author %}
   <meta name="author" content="{{config.author}}">
   {% endif %}

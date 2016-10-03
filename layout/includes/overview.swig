@@ -23,4 +23,11 @@
 		<font>» {{page.year}}</font>
 	{% else %}
 		<font>» {{__('article_arc')}}</font>
+	{% endif %}
+{% elseif is_tag() %}
+<a href="{{ config.root }}{{ config.blog_home_dir }}">{{ __('blog') }}</a>
+<font>» </font>
+<font>{{ __('tag_title') }}</font>
+<font>» </font>
+<font>{{page.tag}}</font>
 {% endif %}

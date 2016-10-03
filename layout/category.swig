@@ -3,16 +3,16 @@
 {% block body %}
 
 {% if is_category() %}
-    <div class="blog-content categories">
+    <div class="blog-content blog-show">
         <h1 class="overview">
           {% include 'includes/overview.swig' %}
         </h1>
         <div class="cate-content">
             {% include 'includes/archive_sort.swig' %}
         </div>
-        <div class="duoshuo-part">
+        {#<div class="duoshuo-part">
           {% include 'includes/duoshuo.swig' %}
-        </div>
+        </div>#}
         {% include 'includes/web-info.swig' %}
     </div>
 {% endif %}

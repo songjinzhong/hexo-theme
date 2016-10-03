@@ -1,5 +1,5 @@
 <div class="web-info">
-    Copyright © 2016-2018,本站由
+    Copyright © 2016-2017,本站由
     <a href="#">本人</a>
     手工打造,历时2周,
     <a href="#">联系方式</a>

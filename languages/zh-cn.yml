@@ -18,12 +18,19 @@ article_cat: 分类
 # cate-header
 show_arch: 查看归档 »
 show_cate: 查看分类 »
+arc_sort: 文章归档
+cat_sort: 文章分类
+tag_sort: 文章标签
 
-recent_post: 最新文章
+# cate-detail
+month: 月
+
+recent_post: 最新 10 篇文章
 archives_sort: 博客归档 »
 more_articles: 更多文章
 more_archives: 更多分类
-all_categories: 全部分类
+all_categories: 所有分类
+all_archives: 所有归档
 
 comment: 评论
 
