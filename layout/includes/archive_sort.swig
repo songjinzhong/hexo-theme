@@ -1,4 +1,45 @@
 {% set sort_posts = site.posts.sort('date', -1) %}
+{% set howMuch = {} %}
+{% set catMuch = {} %}
+{% set tagMuch = {} %}
+{% for postItem in sort_posts.toArray() %}
+  	{% set thisYear = date(postItem.date, 'YYYY') %}
+  	{% if !howMuch[thisYear] %}
+    	{% set howMuch[thisYear] = 0 %}
+  	{% endif %}
+  	{% if page.layout == 'categories' %}
+  		{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
+  		{% for cat in postItem.categories %}
+  			{% if !catMuch[cat.name] %}
+  				{% set catMuch[cat.name] = 0 %}
+  			{% endif %}
+  			{% set catMuch[cat.name] = catMuch[cat.name] +1 %}
+  		{% endfor %}
+  	{% elseif is_category() %}
+  		{% for cat in postItem.categories %}
+  			{% if !catMuch[cat.name] %}
+  				{% set catMuch[cat.name] = 0 %}
+  			{% endif %}
+  			{% set catMuch[cat.name] = catMuch[cat.name] +1 %}
+  			{% if cat.name == page.category %}
+  				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
+  			{% endif %}
+  		{% endfor %}
+  	{% elseif is_tag() %}
+  		{% for tag in postItem.tags %}
+  			{% if !tagMuch[tag.name] %}
+  				{% set tagMuch[tag.name] = 0 %}
+  			{% endif %}
+  			{% set tagMuch[tag.name] = tagMuch[tag.name] +1 %}
+  			{% if tag.name == page.tag %}
+  				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
+  			{% endif %}
+  		{% endfor %}
+  	{% elseif is_archive() %}
+  		{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
+
+  	{% endif %}
+{% endfor %}
 <div class="cate-header">
 	<h2>
 		{% if is_archive() %}
@@ -22,6 +63,7 @@
 					{% for a in site.categories %}
 						<li>
 							<a href="{{ url_for('/blog/categories/'+a.name) }}">{{a.name}}</a>
+							<span>{{catMuch[a.name]}}</span>
 						</li>
 					{% endfor %}
 				{% elseif is_tag() %}
@@ -32,6 +74,7 @@
 							<li>
 						{% endif %}
 							<a href="{{config.root}}{{config.tag_dir}}/{{tag.name}}">{{tag.name}}</a>
+							<span>{{tagMuch[tag.name]}}</span>
 						<li>
 					{% endfor %}
 				{% elseif is_category() %}
@@ -42,6 +85,7 @@
 							<li>
 						{% endif %}
 							<a href="{{ url_for('/blog/categories/'+a.name)}}">{{a.name}}</a>
+							<span>{{catMuch[a.name]}}</span>
 						</li>
 					{% endfor %}
 					<li class="cate-all"><a href="{{ url_for('/blog/categories/')}}">{{__('all_categories')}}</a></li>
@@ -57,6 +101,7 @@
 							<li>
 							{% endif %}
 								<a href="{{config.root}}{{config.archive_dir}}/{{thisYear}}">{{thisYear}}</a>
+								<span>{{howMuch[thisYear]}}</span>
 							</li>
 						{% endif %}
 					{% endfor %}
@@ -70,30 +115,6 @@
 
 <div class="cate-detail">
 	{% if site.posts.length > 0 %}
-		{% set howMuch = {} %}
-	    {% for postItem in sort_posts.toArray() %}
-	      	{% set thisYear = date(postItem.date, 'YYYY') %}
-	      	{% if !howMuch[thisYear] %}
-	        	{% set howMuch[thisYear] = 0 %}
-	      	{% endif %}
-	      	{% if page.layout == 'categories' %}
-	      		{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
-	      	{% elseif is_category() %}
-	      		{% for cat in postItem.categories %}
-	      			{% if cat.name == page.category %}
-	      				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
-	      			{% endif %}
-	      		{% endfor %}
-	      	{% elseif is_tag() %}
-	      		{% for tag in postItem.tags %}
-	      			{% if tag.name == page.tag %}
-	      				{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
-	      			{% endif %}
-	      		{% endfor %}
-	      	{% elseif is_archive() %}
-	      		{% set howMuch[thisYear] = howMuch[thisYear] + 1 %}
-	      	{% endif %}
-	    {% endfor %}
 		{% set lastMonth = '00' %}
 	    {% set lastYear = '0000' %}
 	    {% for postItem in sort_posts.toArray() %}
