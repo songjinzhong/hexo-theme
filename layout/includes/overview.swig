@@ -3,18 +3,24 @@
 <font>» </font>
 
 {% if page.layout == 'blog' %}
-<font>博客</font>
+<font>{{ __('blog') }}</font>
 
 {% elseif page.layout == 'categories' %}
-<a href="{{ config.root }}{{ config.blog_home_dir }}">博客</a>
-<font>» 文章分类</font>
+<a href="{{ config.root }}{{ config.blog_home_dir }}">{{ __('blog') }}</a>
+<font>» {{__('article_cat')}}</font>
 
 {% elseif is_category() %}
-<a href="{{ config.root }}{{ config.blog_home_dir }}">博客</a>
+<a href="{{ config.root }}{{ config.blog_home_dir }}">{{ __('blog') }}</a>
 <font>» </font>
-<a href="{{ config.root }}{{config.category_dir}}">文章分类</a>
+<a href="{{ config.root }}{{config.category_dir}}">{{__('article_cat')}}</a>
 <font>» {{page.category}}</font>
+
 {% elseif is_archive() %}
-<a href="{{ config.root }}{{ config.blog_home_dir }}">博客</a>
-<font>» 文章分类</font>
+<a href="{{ config.root }}{{ config.blog_home_dir }}">{{ __('blog') }}</a>
+	{% if is_year() %}
+		<font>» </font>
+		<a href="{{config.root}}{{config.archive_dir}}">{{__('article_arc')}}</a>
+		<font>» {{page.year}}</font>
+	{% else %}
+		<font>» {{__('article_arc')}}</font>
 {% endif %}

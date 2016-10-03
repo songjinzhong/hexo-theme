@@ -10,10 +10,20 @@ post_title: 文章
 posts_title: 文章
 not_post: 该类没有文章
 
+# overview
+blog: 博客
+article_arc: 归档
+article_cat: 分类
+
+# cate-header
+show_arch: 查看归档 »
+show_cate: 查看分类 »
+
 recent_post: 最新文章
 archives_sort: 博客归档 »
 more_articles: 更多文章
 more_archives: 更多分类
+all_categories: 全部分类
 
 comment: 评论
 
