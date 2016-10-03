@@ -25,6 +25,13 @@ tag_sort: 文章标签
 # cate-detail
 month: 月
 
+#post
+author: 作者
+name: 宋进忠
+time: 时间
+page_footer_header: 文档信息
+contacts: 社交媒体
+
 recent_post: 最新 10 篇文章
 archives_sort: 博客归档 »
 more_articles: 更多文章

@@ -1,5 +1,5 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
-  body
+  page content!
 {% endblock %}

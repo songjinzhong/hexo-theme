@@ -30,4 +30,9 @@
 <font>{{ __('tag_title') }}</font>
 <font>» </font>
 <font>{{page.tag}}</font>
+
+{% elseif is_post() %}
+<a href="{{ config.root }}{{ config.blog_home_dir }}">{{ __('blog') }}</a>
+<font>» </font>
+<a href="{{config.root}}{{config.archive_dir}}">{{__('article_arc')}}</a>
 {% endif %}
