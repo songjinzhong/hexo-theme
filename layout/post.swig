@@ -48,31 +48,34 @@
  		<div class="post-markdown">
  			{{page.content}}
  		</div>
- 		<div class="pre-next">
+ 		<div class="pre-next clear">
  			{% if page.prev %}
  				<div class="pre-page">
+ 					<i class="pre-icon"></i>
  					<a href="{{config.root}}{{page.prev.path}}">{{page.prev.title}}</a>
  				</div>
  			{% endif %}
  			{% if page.next %}
- 				<div class="pre-page">
+ 				<div class="next-page">
  					<a href="{{config.root}}{{page.next.path}}">{{page.next.title}}</a>
+ 					<i class="next-icon"></i>
  				</div>
  			{% endif %}
  		</div>
  		<div class="post-footer">
+ 			<a href="{{config.root}}{{config.rss_dir}}" class="post-feed">Feed <i class="feed-icon"></i></a>
  			<h3>{{__('page_footer_header')}}</h3>
  			<ul>
  				<li>
- 					<span>版权声明：自由转载-非商用-非衍生-保持署名</span><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">(创意共享3.0许可证)</a>
+ 					<span>版权声明：</span><span>自由转载-非商用-保持署名</span><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">(创意共享3.0许可证)</a>
  				</li>
  				<li>
- 					<span>发表日期：{{date(page.date, 'YYYY-MM-DD HH:mm:ss')}}</span>
+ 					<span>发表日期：</span><span>{{date(page.date, 'YYYY-MM-DD HH:mm:ss')}}</span>
  				</li>
  				<li>
  					{% if page.categories.length %}
 		    			{# 组织分类的链接列表 #}
-						<span>{{ __('category_title') }}:
+						<span>本文{{ __('category_title') }}：</span><span>
 					    {% set i = 0 %}
 					    {% for cat in page.categories %}
 					      {% if i !== 0 %}
@@ -88,7 +91,7 @@
 				    {# 组织标签的链接列表 #}
 				    {% if page.tags.length %}
 					    <span>
-					    {{ __('tag_title') }}:
+					    本文{{ __('tag_title') }}：</span><span>
 					    {% set i = 0 %}
 					    {% for tag in page.tags %}
 					      {% if i !== 0 %}
@@ -101,10 +104,10 @@
 					{% endif %}
  				</li>
  				<li>
- 					<span>最后编辑：{{date(page.updated, 'YYYY-MM-DD HH:mm:ss')}}</span>
+ 					<span>最后编辑：</span><span>{{date(page.updated, 'YYYY-MM-DD HH:mm:ss')}}</span>
  				</li>
  				<li>
- 					<span>{{__('contacts')}}</span>
+ 					<span>{{__('contacts')}}：</span><span><a href="{{theme.github}}">GitHub<i class="github"></i></a><a href="{{theme.weibo}}">微博<i class="weibo"></i></a></span>
  				</li>
  			</ul>
  		</div>

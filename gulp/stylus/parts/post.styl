@@ -66,6 +66,77 @@
     & .post-markdown{
         padding 30px 0 20px
         border-bottom 1px solid #d3d3d3
+        &:after{
+            content '(完)'
+            font-size 22px
+            text-align center
+        }
+    }
+    & .pre-next{
+        margin 20px 0
+        font-size 20px
+        & .pre-page{
+            float left
+            line-height 1.5
+            &:after{
+                content '前一篇'
+                font-size 10px
+                color #999
+                margin-left 5px
+            }
+        }
+        & .next-page{
+            float right
+            line-height 1.5
+            &:before{
+                content '后一篇'
+                font-size 10px
+                color #999
+                margin-right 5px
+            }
+        }
+        & a{
+            color #4a75b5
+            &:hover{
+                color black
+            }
+        }
+    }
+    & .post-footer{
+        margin 40px 5px
+        padding 10px
+        border 1px solid black
+        & .post-feed{
+            float right
+            font-size: 25px;
+            padding: 7px;
+        }
+        & h3{
+            border-bottom: 1px dashed black;
+            font-size: 25px;
+            font-weight: bold;
+            color: #556677;
+            padding 10px
+        }
+        & ul{
+            padding 30px 0px 30px 25px
+            list-style-type circle
+            & li{
+                line-height 2
+                & span:first-child{
+                    color #999
+                }
+                & span a i{
+                    margin 0 15px 0 5px
+                }
+            }
+        }
+        & a{
+            color #4a75b5
+            &:hover{
+                color black
+            }
+        }
     }
     & .web-info{
         margin-top 25px
@@ -79,5 +150,15 @@
         & a{
             color #4a75b5
         }
+    }
+    @media (max-width: 800px){
+        padding 15px 50px
+        margin-top 0px
+    }
+    @media (max-width: 600px){
+        padding 15px 20px
+    }
+    @media (max-width: 400px){
+        padding 15px 10px
     }
 }

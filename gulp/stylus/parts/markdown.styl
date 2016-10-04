@@ -7,6 +7,13 @@
             color black
         }
     }
+    & p a{
+        &:before{
+            font-family 'icomoon'
+            content '\e9cd'
+            color #999
+        }
+    }
     & strong{
         margin 0 3px
     }
@@ -14,7 +21,10 @@
         margin-bottom 20px
     }
     & ul,ol{
-        margin: 25px 0 25px 35px;
+        padding: 10px 0 10px 35px;
+        margin: 5px;
+        border: 2px solid #999;
+        border-width: 0 0 2px 1px;
         list-style-type: square;
         & li{
             margin-bottom: 5px;
@@ -36,23 +46,36 @@
         color: #000;
     }
     & .highlight{
-        margin 20px 0
-        position relative
-        font-family: Consolas, "Courier New";
         background: #f8f8f8;
-        padding: 10px 15px;
-        overflow-x: auto;
-        border: 1px dashed black;
-        word-wrap normal
-        & .gutter{
-            display none
-        }
-        & div{
-            margin 5px;
-            line-height 1.5
-        }
+        overflow auto
+        border 1px dashed black
+        margin 20px 0
         & pre{
             margin 0
+            & code{
+                padding 10px 0px 10px 5px
+            }
+        }
+        & code{
+            border 0px
+        }
+        & table{
+            width 100%
+        }
+        & .gutter{
+            width 20px
+            border-right 1px solid #999
+            text-align center
+            & pre{
+                line-height 1.5
+                & div{
+                    margin 0
+                    color #999
+                }
+            }
+        }
+        & .pre{
+
         }
     }
     & pre{
@@ -66,9 +89,7 @@
             padding: 10px 15px;
             background: #23241f;
             background-color: #f8f8f8;
-            border-color: black;
-            border-style: dashed;
-            border-width: 1px;
+            border 1px dashed black
             color: black;
             font-family: Consolas, "Courier New";
             font-weight: normal;
@@ -80,6 +101,7 @@
         padding 2px 8px
         border-radius: 5px
         margin 5px
+        background white
     }
     & blockquote{
         background-color: #f5f3f3;
@@ -92,17 +114,14 @@
         font-size: 1rem;
         position: relative;
     }
-    & blockquote ul,ol{
-        margin: 10px 0 10px 35px
-    }
     & h3,h4,h5{
         margin-bottom: 15px;
         font-weight: normal;
     }
     & h3{
         font-size: 32px;
-        line-height: 64px;
-        margin-top: 50px;
+        line-height: 44px;
+        margin-top: 30px;
     }
     & h4{
         font-size: 24px;
