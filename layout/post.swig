@@ -63,7 +63,7 @@
  			{% endif %}
  		</div>
  		<div class="post-footer">
- 			<a href="{{config.root}}{{config.rss_dir}}" class="post-feed">Feed <i class="feed-icon"></i></a>
+ 			<a href="{{config.root}}{{config.rss_dir}}" class="post-feed" target="_black">Feed <i class="feed-icon"></i></a>
  			<h3>{{__('page_footer_header')}}</h3>
  			<ul>
  				<li>
@@ -111,9 +111,17 @@
  				</li>
  			</ul>
  		</div>
- 		<div class="duoshuo-part">
-			{% include 'includes/duoshuo.swig' %}
-		</div>
+ 		<div class="page-related">
+ 			<h2>{{ __('more_articles') }}</h2>
+ 			<ul>
+ 				{% include 'includes/page-related.swig' %}
+ 			</ul>
+ 		</div>
+ 		{% if page.comments %}
+	 		<div class="duoshuo-part">
+				{% include 'includes/duoshuo.swig' %}
+			</div>
+		{% endif %}
  		{% include 'includes/web-info.swig' %}
  	</div>
 {% endblock %}

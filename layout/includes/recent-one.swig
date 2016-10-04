@@ -53,7 +53,7 @@
 		    	{% endif %}   		
 	    	</a>
 	    {% endif %}
-		<p>{{ strip_html(truncate(firstPost.content, {length : 180})) }}<a href="{{ url_for(firstPost.path) }}">阅读全文 <font>»</font></a>
+		<p>{{ truncate(strip_html(firstPost.content),{length : 180}) }}<a href="{{ url_for(firstPost.path) }}">阅读全文 <font>»</font></a>
 		</p>
 	</div>
 {% endif %}

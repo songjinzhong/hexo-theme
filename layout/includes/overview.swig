@@ -1,4 +1,5 @@
 <a href="{{config.root}}{{config.rss_dir}}" class="web-feed" title="RSS订阅" target="_blank"></a>
+<i class="search-icon"></i>
 <a href="{{ config.root }}">{{config.title}}</a>
 <font>» </font>
 
