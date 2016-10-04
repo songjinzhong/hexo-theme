@@ -1,0 +1,105 @@
+.post .post-markdown{
+    font-size: 18px;
+    line-height: 30px;
+    position: relative;
+    & a{
+        color #ef593e
+        &:hover{
+            color black
+        }
+    }
+    & p,blockquote,.highlight,div,table{
+        margin-bottom 25px
+    }
+    & ul,ol{
+        margin: 25px 0 25px 35px;
+        list-style-type: square;
+        & li{
+            margin-bottom: 5px;
+            list-style-type: square;
+            line-height: 28px;
+            font-size: 16px;
+        }
+    }
+    & ol li{
+        list-style-type decimal
+    }
+    & a{
+        mytransition(color 0.4s ease)
+    }
+    & h2{
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+        color: #000;
+    }
+    & .highlight{
+        position relative
+        font-family: monospace, Consolas, "Courier New";
+        background: #f8f8f8;
+        padding: 10px 40px;
+        overflow-x: auto;
+        border: 1px solid #ccc;
+        border-width: 1px 0;
+    }
+    & blackquote ul,ol{
+        margin: 10px 0 10px 35px
+    }
+    & h3,h4,h5{
+        margin-bottom: 15px;
+        font-weight: normal;
+    }
+    & h3{
+        font-size: 32px;
+        line-height: 64px;
+        margin-top: 50px;
+    }
+    & h4{
+        font-size: 24px;
+        line-height: 48px;
+        margin-top: 30px;
+    }
+    & h5{
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+    & img{
+        max-width: 96%;
+        display: block;
+        border-radius: 8px;
+        border: 6px solid #e8e8e8;
+        overflow: hidden;
+    }
+    & hr{
+        margin-bottom: 30px;
+        height: 4px;
+        border: none;
+        background-color: #ccc;
+        left: -2px;
+    }
+    & blockquote p{
+        margin-bottom 0
+    }
+    & pre{
+        font-size: 16px;
+        line-height: 26px;
+        background: #f8f8f8;
+        margin-bottom 20px
+        & code{
+            display: block;
+            overflow-x: auto;
+            padding: 0.5em;
+            background: #23241f;
+            -webkit-text-size-adjust: none;
+            background-color: #f8f8f8;
+            border-color: #dfdfdf;
+            border-style: solid;
+            border-width: 1px;
+            color: black;
+            font-family: Consolas,"Liberation Mono",Courier,monospace;
+            font-weight: normal;
+            padding: 0.125rem 0.3125rem 0.0625rem;
+        }
+    }
+}
