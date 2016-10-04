@@ -50,7 +50,7 @@
     </div>
     <div id="wenzi" class="step" data-x="4000" data-y="4000" data-scale="3">
         <div>我用笨拙的文字，记录了我的成长</div>
-        <div style="line-height:100px">这是我的<a class="button" href="http://blog.yuren.space" target="_black">我的博客</a></div>
+        <div style="line-height:100px">这是我的<a class="button" href="http://yuren.space/blog" target="_black">我的博客</a></div>
         <div>曾几何时，我也曾彷徨过</div>
     </div>
     <div id="panghuang" class="step" data-x="-2300" data-y="4000" data-rotate="122" data-scale="3">
