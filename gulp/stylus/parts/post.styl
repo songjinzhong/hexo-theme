@@ -14,9 +14,16 @@
         margin-top: 10px
         padding-bottom 10px
         border-bottom 1px solid black
+        & a{
+            color #4a75b5
+            &:hover{
+                color black
+            }
+        }
         & .web-feed{
             float: right;
             font-size: 23px;
+            color #ef593e
             &:before{
                 font-family 'icomoon'
                 content: "\ea9b"
@@ -35,7 +42,12 @@
         & .author-info{
             color #999
             line-height 2
-            
+            & p a{
+                color #4a75b5
+                &:hover{
+                    color black
+                }
+            }
             .author{
                 float:right
                 padding 0 10px
@@ -52,7 +64,8 @@
         }
     }
     & .post-markdown{
-
+        padding 30px 0 20px
+        border-bottom 1px solid #d3d3d3
     }
     & .web-info{
         margin-top 25px
