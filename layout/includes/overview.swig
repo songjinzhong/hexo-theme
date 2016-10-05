@@ -37,3 +37,4 @@
 <font>» </font>
 <a href="{{config.root}}{{config.archive_dir}}">{{__('article_arc')}}</a>
 {% endif %}
+{% include 'search.swig' %}
