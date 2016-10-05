@@ -50,11 +50,11 @@
 			{{__('cat_sort')}}
 		{% endif %}
 	{% if is_archive() %}
-		<a href="{{config.root}}{{config.category_dir}}">{{__('show_cate')}}</a>
+		<a href="{{url_for(config.category_dir)}}">{{__('show_cate')}}</a>
 	{% elseif is_category() or page.layout == 'categories' %}
-		<a href="{{config.root}}{{config.archive_dir}}">{{__('show_arch')}}</a>
+		<a href="{{url_for(config.archive_dir)}}">{{__('show_arch')}}</a>
 	{% elseif is_tag() %}
-		<a href="{{config.root}}{{config.archive_dir}}">{{__('show_arch')}}</a>
+		<a href="{{url_for(config.archive_dir)}}">{{__('show_arch')}}</a>
 	{% endif %}
 	</h2>
 	<ul>
@@ -73,7 +73,7 @@
 						{% else %}
 							<li>
 						{% endif %}
-							<a href="{{config.root}}{{config.tag_dir}}/{{tag.name}}">{{tag.name}}</a>
+							<a href="{{url_for(tag.path)}}">{{tag.name}}</a>
 							<span>{{tagMuch[tag.name]}}</span>
 						<li>
 					{% endfor %}
@@ -84,11 +84,11 @@
 						{% else %}
 							<li>
 						{% endif %}
-							<a href="{{ url_for('/blog/categories/'+a.name)}}">{{a.name}}</a>
+							<a href="{{ url_for(a.path)}}">{{a.name}}</a>
 							<span>{{catMuch[a.name]}}</span>
 						</li>
 					{% endfor %}
-					<li class="cate-all"><a href="{{ url_for('/blog/categories/')}}">{{__('all_categories')}}</a></li>
+					<li class="cate-all"><a href="{{ url_for(config.category_dir)}}">{{__('all_categories')}}</a></li>
 				{% elseif is_archive() %}
 					{% set lastYear = '0000' %}
 					{% for postItem in sort_posts.toArray() %}
@@ -100,13 +100,13 @@
 							{% else %}
 							<li>
 							{% endif %}
-								<a href="{{config.root}}{{config.archive_dir}}/{{thisYear}}">{{thisYear}}</a>
+								<a href="{{url_for(config.archive_dir+'/'+thisYear)}}">{{thisYear}}</a>
 								<span>{{howMuch[thisYear]}}</span>
 							</li>
 						{% endif %}
 					{% endfor %}
 					{% if is_year() %}
-						<li class="cate-all"><a href="{{config.root}}{{config.archive_dir}}">{{__('all_archives')}}</a></li>
+						<li class="cate-all"><a href="{{url_for(config.archive_dir)}}">{{__('all_archives')}}</a></li>
 					{% endif %}
 				{% endif %}
       	{% endif %}
@@ -190,7 +190,7 @@
 			    	{% endif %}
 					<li>
 				 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
-				 		<a href="{{ config.root }}{{ postItem.path }}">
+				 		<a href="{{ url_for(postItem.path) }}">
 				 			{% if postTitle.length < 40 %}
 				            	{{ postTitle }}
 				          	{% else %}
@@ -213,7 +213,7 @@
 		    	{% else %}
 			    	<li>
 				 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
-				 		<a href="{{ config.root }}{{ postItem.path }}">
+				 		<a href="{{ url_for(postItem.path) }}">
 				 			{% if postTitle.length < 40 %}
 				            	{{ postTitle }}
 				          	{% else %}

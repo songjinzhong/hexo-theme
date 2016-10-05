@@ -3,17 +3,17 @@
 	{% set firstPost = sort_posts.toArray()[0] %}
 	{% set postTitle = firstPost.title || trim(strip_html(firstPost.content))  %}
 	<h3>
-		<a href="{{ config.root }}{{ firstPost.path }}">
-			{% if postTitle.length < 20 %}
+		<a href="{{ url_for(firstPost.path) }}">
+			{% if postTitle.length < 50 %}
 				{{ postTitle }}
 			{% else %}
-			    {{ truncate( postTitle, {length: 20}) }}
+			    {{ truncate( postTitle, {length: 50}) }}
 			{% endif %}
 		</a>
 	</h3>
 	<span class="post-info">
 	    {# 显示时间 #}
-	    <span>{{ date(firstPost.date, 'M-D') }}</span>
+	    <span>{{ date(firstPost.date, 'MM/DD') }}</span>
 	    {% if firstPost.categories.length %}
 	    {# 组织分类的链接列表 #}
 	    <span>{{ __('category_title') }}
@@ -45,7 +45,7 @@
 	<div class="post-content">
 		{# 有些在文章的头部指定了照片，也显示出来 #}
 	    {% if firstPost.photos %}
-	    	<a class="post-image" href="{{ config.root }}{{ firstPost.path }}">
+	    	<a class="post-image" href="{{ url_for(firstPost.path) }}">
 		    	{% if firstPost.photos.length > 1 %}
 		    		<img src="{{ firstPost.photos[1] }}" />
 		    	{% else %}

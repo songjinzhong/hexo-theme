@@ -29,10 +29,15 @@
 			{% if page !== postItem %}
 				{% set i = i -1 %}
 				<li>
-					<span>{{ date(postItem.date, 'YYYY.MM.DD') }}</span><a href="{{config.root}}{{postItem.path}}">{{postItem.title}}</a>
+					<span>{{ date(postItem.date, 'YYYY.MM.DD') }}</span><a href="{{url_for(postItem.path)}}">{{postItem.title}}</a>
 					<p>{{truncate(strip_html(postItem.content),{length : 40})}}</p>
 				</li>
 			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endfor %}
+{% if i == 4 %}
+	<li>
+		<p>没有相关文章</p>
+	</li>
+{% endif %}

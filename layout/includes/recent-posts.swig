@@ -12,11 +12,11 @@
 	 	<li>
 	 		<span>{{ date(postItem.date, 'YYYY-MM-DD') }} » </span>
 	 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
-	 		<a href="{{ config.root }}{{ postItem.path }}">
-	 			{% if postTitle.length < 40 %}
+	 		<a href="{{ url_for(postItem.path) }}">
+	 			{% if postTitle.length < 50 %}
 	            	{{ postTitle }}
 	          	{% else %}
-	            	{{ truncate( postTitle, {length: 40}) }}
+	            	{{ truncate( postTitle, {length: 50}) }}
 	          	{% endif %}
 	 		</a>
           </a>

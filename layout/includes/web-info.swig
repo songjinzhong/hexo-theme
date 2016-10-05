@@ -6,6 +6,6 @@
     <span>
 	    网站参考
 	    <a href="http://www.barretlee.com/">小胡子哥</a>/
-	    <a href="">阮一峰老师</a>
+	    <a href="http://www.ruanyifeng.com/home.html">阮一峰老师</a>
 	</span>
 </div>

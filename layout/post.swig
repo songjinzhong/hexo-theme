@@ -46,24 +46,30 @@
  			</div>
  		</div>
  		<div class="post-markdown">
- 			{{page.content}}
+ 			{{page.excerpt}}
+ 			{% if page.photos %}
+ 			<p>
+ 				<img class="img-mid" src="{{page.photos[0]}}" alt="图片来源网上" title="图片来源于网络">
+ 			</p>
+ 			{% endif %}
+ 			{{page.more}}
  		</div>
  		<div class="pre-next clear">
  			{% if page.prev %}
  				<div class="pre-page">
  					<i class="pre-icon"></i>
- 					<a href="{{config.root}}{{page.prev.path}}">{{page.prev.title}}</a>
+ 					<a href="{{url_for(page.prev.path)}}">{{page.prev.title}}</a>
  				</div>
  			{% endif %}
  			{% if page.next %}
  				<div class="next-page">
- 					<a href="{{config.root}}{{page.next.path}}">{{page.next.title}}</a>
+ 					<a href="{{url_for(page.next.path)}}">{{page.next.title}}</a>
  					<i class="next-icon"></i>
  				</div>
  			{% endif %}
  		</div>
  		<div class="post-footer">
- 			<a href="{{config.root}}{{config.rss_dir}}" class="post-feed" target="_black">Feed <i class="feed-icon"></i></a>
+ 			<a href="{{url_for(config.rss_dir)}}" class="post-feed" target="_black">Feed <i class="feed-icon"></i></a>
  			<h3>{{__('page_footer_header')}}</h3>
  			<ul>
  				<li>
