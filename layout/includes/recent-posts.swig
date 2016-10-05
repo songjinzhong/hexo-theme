@@ -8,7 +8,7 @@
 <ul>
  	{% set num = 0 %}
  	{% for postItem in sort_posts %}
-	 	{% if num < 9 %}
+	 	{% if num < 10 %}
 	 	<li>
 	 		<span>{{ date(postItem.date, 'YYYY-MM-DD') }} » </span>
 	 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
