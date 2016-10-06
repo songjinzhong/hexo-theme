@@ -588,13 +588,30 @@
                 }));
             }
             results.append('<ul></ul>');
+            var maxResult = 10;
+            var flag = false;
             for (var i = 0; i < searchResult.length; i++) {
+                if(i >= maxResult){
+                    flag = true;
+                    break;
+                }
                 var lunrref = searchResult[i].ref;
                 var postData = this.blogData[lunrref];
                 results.find('ul').append(this.format(this.result_template, postData));
                 resultsData.push(postData);
             }
-
+            if(flag){
+                var html = '<li class="load-more" style="color:#4a75b5;cursor:pointer">显示全部搜索结果</li>';
+                results.find('ul').append(html);
+            }
+            $('.load-more').click(function(){
+                results.find('ul .load-more').remove();
+                for (var i = maxResult; i < searchResult.length; i++){
+                    var lunrref = searchResult[i].ref;
+                    var postData = this.blogData[lunrref];
+                    results.find('ul').append(this.format(this.result_template, postData));
+                }
+            }.bind(this));
             if (this.onComplete) {
                 this.onComplete(resultsData);
             };
