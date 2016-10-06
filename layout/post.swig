@@ -140,10 +140,11 @@
  			</ul>
  		</div>
  		{% if page.comments %}
-	 		<div class="duoshuo-part">
+	 		<div class="duoshuo-part" id="comments">
 				{% include 'includes/duoshuo.swig' %}
 			</div>
 		{% endif %}
+		{% include 'includes/back-to-top.swig' %}
  		{% include 'includes/web-info.swig' %}
  	</div>
 {% endblock %}
