@@ -6,6 +6,11 @@
 {% if page.layout == 'blog' %}
 <font>{{ __('blog') }}</font>
 
+{% elseif page.layout == 'info' %}
+<a href="{{ url_for(config.blog_home_dir) }}">{{ __('blog') }}</a>
+<font>» </font>
+<font>{{__('about_web')}}</font>
+
 {% elseif page.layout == 'categories' %}
 <a href="{{ url_for(config.blog_home_dir) }}">{{ __('blog') }}</a>
 <font>» {{__('article_cat')}}</font>
