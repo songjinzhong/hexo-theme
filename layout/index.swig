@@ -16,7 +16,7 @@
 				    $(".hide").show();
 				} else {
 					$("header").height($("header").height()).css({    'background': 'rgba(0,0,0,0)'});
-					$("#btn-close").css({'transform': 'rotate(45deg)'});
+					$("#btn-close").css({'transform': 'rotate(45deg)','color':'white'});
 				    $(".hide").hide();
 				}
 				hideAll = !hideAll;
