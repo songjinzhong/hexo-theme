@@ -144,7 +144,6 @@
 				{% include 'includes/duoshuo.swig' %}
 			</div>
 		{% endif %}
-		{% include 'includes/back-to-top.swig' %}
  		{% include 'includes/web-info.swig' %}
  	</div>
 {% endblock %}

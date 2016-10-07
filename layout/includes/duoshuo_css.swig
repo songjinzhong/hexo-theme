@@ -140,6 +140,11 @@
     font-size: 16px !important;
     font-family: Consolas, Georgia, serif;
     }
+    @media (max-width: 800px){
+        div#ds-thread #ds-reset .ds-textarea-wrapper textarea {
+            height: 70px !important;
+        }
+    }
 
     div#ds-thread #ds-reset .ds-post-options {
     overflow: hidden;
@@ -224,5 +229,11 @@
 
     #ds-thread #ds-reset .ds-login-buttons p {
     color: #999;
+    }
+    #ds-thread #ds-reset .ds-comment-body{
+        background: #fbfbfb;
+        padding: 15px 15px 12px 32px;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.15), 0 1px 0 rgba(255,255,255,.75) inset;
     }
   </style>

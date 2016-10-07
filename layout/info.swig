@@ -27,7 +27,7 @@
  			<p><strong>说明一下</strong>，博客和主题是分开的，分别在上面两个项目中，具体使用请参考 Hexo 的主题介绍。Hexo 我手动修改了部分插件(hexo-util 中的 markdown插件和 search插件 )，但是我把修改后的源码放到node_module目录下面，你可以直接复制替换。同时，Hexo 的主题未进行优化，如果你有看不懂的地方，欢迎随时给我发邮件。邮件是实时提醒的，其他联系方式不保证即时回复。</p>
  			<p><strong>另外</strong>，本站还没有考虑兼容性，我设计的时候尽量使用通用的样式，在Chrome 和 FireFox (目前最新版本)下显示是正常的，IE 11 目前也没有问题，手机 Chrome 也暂时没问题，如果你在浏览过程中遇到任何 Bug 或兼容性问题，请及时向我反馈，<strong>非常感谢</strong>!</p>
  		</div>
- 		<div class="link">
+ 		<div class="link" id="link">
  			<p class="header"><strong>About the Links</strong><span>/链接信息</span></p>
  			<ul>
  				<li><span>Github:</span><a href="https://github.com/songjinzhong">@songjinzhong</a></li>

@@ -55,5 +55,6 @@
 	    {% endif %}
 		<p>{{ truncate(strip_html(firstPost.content),{length : 180}) }}<a href="{{ url_for(firstPost.path) }}">阅读全文 <font>»</font></a>
 		</p>
+		<span><a href="{{url_for(config.web_info_dir)}}">个人简介&联系方式</a></span>
 	</div>
 {% endif %}
