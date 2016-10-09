@@ -6,6 +6,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="author" content="songjinzhong,songjz.ecnu@gmail.com">
+    <!-- 重定向 www.yuren.space -->
+    <script type="text/javascript">
+        if(window.location.href.search("http://www.yuren.space") != -1){
+            window.location.replace(window.location.href.replace("www.yuren.space","yuren.space"));
+        }
+    </script>
     <title>404</title>
     <!-- 记住把下面的 homePageName、homePageUrl 改成你想需要的内容 -->
     <script type="text/javascript" src="http://www.qq.com/404/search_children.js" homePageName="返回渔人的主页" homePageUrl="/" charset="utf-8">

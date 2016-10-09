@@ -42,4 +42,10 @@
   {% if theme.stylesheets !== undefined && theme.stylesheets.length > 0 %}
   {{ css(theme.stylesheets) }}
   {% endif %}
+  <!-- 重定向 www.yuren.space -->
+  <script type="text/javascript">
+      if(window.location.href.search("http://www.yuren.space") != -1){
+          window.location.replace(window.location.href.replace("www.yuren.space","yuren.space"));
+      }
+  </script>
 </head>
