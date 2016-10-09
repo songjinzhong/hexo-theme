@@ -1,7 +1,9 @@
 {% set key = page.path %}
+{% if is_post() %}
+    {% set key = ds_key(page.path) %}
+{% endif %}
 {% set title = page.title %}
 {% set url = config.url + config.root + page.path %}
-
 <div class="ds-thread" data-thread-key="{{key}}" data-title="{{title}}" data-url="{{url}}"></div>
 {% include 'duoshuo_css.swig' %}
 <script type="text/javascript">
