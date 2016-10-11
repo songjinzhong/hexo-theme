@@ -30,8 +30,8 @@
  		<div class="link" id="link">
  			<p class="header"><strong>About the Links</strong><span>/链接信息</span></p>
  			<ul>
- 				<li><span>Github:</span><a href="https://github.com/songjinzhong">@songjinzhong</a></li>
- 				<li><span> WeiBo :</span><a href="http://weibo.com/u/3822969136">微博</a></li>
+ 				<li><span>Github:</span><a href="{{theme.github}}">@songjinzhong</a></li>
+ 				<li><span> WeiBo :</span><a href="{{theme.weibo}}">微博</a></li>
  				<li><span>Old Blog:</span><a href="http://songjz.cn">旧博(不再使用)</a></li>
  				<li><span>Mail Me:</span><a href="mailto:songjz.ecnu@gmail.com">邮件</a></li>
  			</ul>
