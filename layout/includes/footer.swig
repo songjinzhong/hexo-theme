@@ -12,6 +12,10 @@
 	{% if config.google_tongji or theme.google_tongji %}
 		{% include 'google-tongji.swig' %}
 	{% endif %}
+	{# zhanzhang Analytics #}
+	{% if config.zhanzhang_tongji or theme.zhanzhang_tongji %}
+		{% include 'zhanzhang_tongji.swig' %}
+	{% endif %}
 	{# for highlight.js,but now in hexo #}
 	{#{% if is_post() %}
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
