@@ -1,6 +1,6 @@
 <div class="tools">
-	<i class="back-to-top" style="display: none"></i>
+  <a href="" class="back-to-top" style="display: none"></a>
 	{% if is_post() %}
-		<i class="goto-comments"></i>
+    <a href="" class="goto-comments"></a>
 	{% endif %}
 </div>
