@@ -49,3 +49,14 @@ google_tongji: UA-85346637-1
 
 # zhanzhang_tongji
 zhanzhang_tongji: 1260592860
+
+# <head><meta>
+# keywords
+kw_lang: zh-cn
+keywords: 博客, 个人, 前端, 计算机, 笔记
+
+# author
+author: 宋进忠
+
+# email
+email: songjz.ecnu@gmail.com

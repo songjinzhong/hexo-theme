@@ -13,6 +13,7 @@
 {% endif %}
 {% set pageTitle = pageTitle + ' | ' + config.title %}
 <head>
+  <title>{% block title %}{{ pageTitle }}{% endblock %}</title>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
   {% if page.layout == 'about' %}
     <meta name="viewport" content="width=1024">
@@ -20,11 +21,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endif %}
   <meta name="apple-mobile-web-app-capable" content="yes">
-  {% if config.author %}
-  <meta name="author" content="{{config.author}}">
+  {% if theme.author %}
+  <meta name="author" content="{{theme.author}}">
   {% endif %}
-  {% if config.keywords || theme.keywords %}
-  <meta name="keywords" content="{{config.keywords || theme.keywords}}">
+  {% if theme.email %}
+  <meta name="email" content="{{theme.email}}">
+  {% endif %}
+  {% if theme.keywords %}
+  <meta name="keywords" lang="{{theme.kw_lang}}" content="{{theme.keywords}}">
   {% endif %}
   {% set metaDescription = trim(strip_html(page.description || page.excerpt || page.content || config.description)) %}
   {% if metaDescription.length > 200 %}
@@ -32,7 +36,6 @@
   {% else %}
     <meta name="description" content="{{ metaDescription }}">
   {% endif %}
-  <title>{% block title %}{{ pageTitle }}{% endblock %}</title>
   {% if config.feed || theme.feed %}
     {{ feed_tag(config.feed.path || theme.feed.path, {title: config.title, type: config.feed.type || theme.feed.type}) }}
   {% endif %}
