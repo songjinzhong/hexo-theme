@@ -49,7 +49,7 @@
  			{{page.excerpt}}
  			{% if page.photos %}
  			<p>
- 				<img class="img-mid" src="{{page.photos[0]}}" alt="图片来源网上" title="图片来源于网络">
+ 				<span class="span-img"><img class="img-mid" src="{{page.photos[0]}}" alt="图片来源网上" title="图片来源于网络"></span>
  			</p>
  			{% endif %}
  			{{page.more}}
