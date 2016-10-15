@@ -13,7 +13,7 @@
 		  			{% set catMuch[cat.name] = catMuch[cat.name] +1 %}
 			  	{% endfor %}
 			{% endfor %}
-			{% set id = 9 %}
+			{% set id = 8 %}
 			{% for a in site.categories %}
 				{% if id > 0 %}
 				<li>
