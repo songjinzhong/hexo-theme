@@ -46,6 +46,7 @@
  			</div>
  		</div>
  		<div class="post-markdown">
+ 			{% include 'includes/pachong.swig' %}
  			{{page.excerpt}}
  			{% if page.photos %}
  			<p>
