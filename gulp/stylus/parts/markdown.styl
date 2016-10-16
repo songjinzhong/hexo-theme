@@ -34,8 +34,8 @@
         margin-bottom 20px
     }
     & ul,ol{
-        padding: 10px 0 10px 35px;
-        margin: 5px 5px 20px 5px
+        padding: 10px 0 10px 25px;
+        margin: 5px 5px 20px 0px
         border: 2px solid #999;
         border-width: 0 0 2px 1px;
         list-style-type: disc;
@@ -175,7 +175,23 @@
     & blockquote p{
         margin-bottom 0
     }
-    & .demo span{
-        margin 0 5px
+    & .demo{
+        background: white;
+        padding: 5px;
+        padding-bottom: 18px;
+        position: relative;
+        border: 1px dashed #999
+        &:after{
+            content: '演示';
+            color: #ef8787;
+            position: absolute;
+            right: 5px;
+            bottom: 2px;
+            font-size: 14px;
+            line-height: 15px;
+        }
+        & span{
+            margin 0 7px
+        }
     }
 }
