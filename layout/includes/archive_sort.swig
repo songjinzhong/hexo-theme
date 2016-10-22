@@ -201,13 +201,17 @@
 				 		<span>
 					    {{ __('tag_title') }}
 					    {% set i = 0 %}
-					    {% for tag in postItem.tags %}
-					      {% if i !== 0 %}
-					        {{'/'}}
-					      {% endif %}
-					      {% set i = i + 1 %}
-					      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-					    {% endfor %}
+					    {% if postItem.tags.length %}
+						    {% for tag in postItem.tags %}
+						      {% if i !== 0 %}
+						        {{'/'}}
+						      {% endif %}
+						      {% set i = i + 1 %}
+						      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+						    {% endfor %}
+	    				{% else %}
+	    					<a href="#">暂无</a>
+					    {% endif %}
 					    </span>
 				 	</li>
 		    	{% else %}
@@ -224,13 +228,17 @@
 				 		<span>
 					    {{ __('tag_title') }}
 					    {% set i = 0 %}
-					    {% for tag in postItem.tags %}
-					      {% if i !== 0 %}
-					        {{'/'}}
-					      {% endif %}
-					      {% set i = i + 1 %}
-					      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-					    {% endfor %}
+					    {% if postItem.tags.length %}
+						    {% for tag in postItem.tags %}
+						      {% if i !== 0 %}
+						        {{'/'}}
+						      {% endif %}
+						      {% set i = i + 1 %}
+						      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+						    {% endfor %}
+	    				{% else %}
+	    					<a href="#">暂无</a>
+	    				{% endif %}
 					    </span>
 				 	</li>
 		 		{% endif %}

@@ -14,9 +14,9 @@
 	<span class="post-info">
 	    {# 显示时间 #}
 	    <span>{{ date(firstPost.date, 'MM/DD') }}</span>
+	    <span>{{ __('category_title') }}
 	    {% if firstPost.categories.length %}
 	    {# 组织分类的链接列表 #}
-	    <span>{{ __('category_title') }}
 	    {% set i = 0 %}
 	    {% for cat in firstPost.categories %}
 	      {% if i !== 0 %}
@@ -25,12 +25,13 @@
 	      {% set i = i + 1 %}
 	      <a href="{{ url_for(cat.path) }}">{{ cat.name }}</a>
 	    {% endfor %}
-	    </span>
+	    {% else %}
+	    	<a href="#">暂无</a>
 	    {% endif %}
+	    </span>
+	    <span>{{ __('tag_title') }}
 	    {# 组织标签的链接列表 #}
 	    {% if firstPost.tags.length %}
-	    <span>
-	    {{ __('tag_title') }}
 	    {% set i = 0 %}
 	    {% for tag in firstPost.tags %}
 	      {% if i !== 0 %}
@@ -39,8 +40,10 @@
 	      {% set i = i + 1 %}
 	      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
 	    {% endfor %}
-	    </span>
+	    {% else %}
+	    	<a href="#">暂无</a>
 	    {% endif %}
+	    </span>
 	</span>
 	<div class="post-content">
 		{# 有些在文章的头部指定了照片，也显示出来 #}

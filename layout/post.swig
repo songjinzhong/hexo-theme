@@ -15,9 +15,9 @@
  				</p>
  				{#分类和标签#}
  				<p class="cat-arc">
- 					{% if page.categories.length %}
+ 					<span>{{ __('category_title') }}:
+ 						{% if page.categories.length %}
 		    			{# 组织分类的链接列表 #}
-						<span>{{ __('category_title') }}:
 					    {% set i = 0 %}
 					    {% for cat in page.categories %}
 					      {% if i !== 0 %}
@@ -26,12 +26,13 @@
 					      {% set i = i + 1 %}
 					      <a href="{{ url_for(cat.path) }}">{{ cat.name }}</a>
 					    {% endfor %}
-					    </span>
+					  {% else %}
+					  	<a href="#">{{__('no_item')}}</a>
 				    {% endif %}
+				  </span>
 				    {# 组织标签的链接列表 #}
+				  <span>{{ __('tag_title') }}:
 				    {% if page.tags.length %}
-					    <span>
-					    {{ __('tag_title') }}:
 					    {% set i = 0 %}
 					    {% for tag in page.tags %}
 					      {% if i !== 0 %}
@@ -39,9 +40,11 @@
 					      {% endif %}
 					      {% set i = i + 1 %}
 					      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-					    {% endfor %}
-					    </span>
-					{% endif %}
+					  		{% endfor %}
+						{% else %}
+					  	<a href="#">{{__('no_item')}}</a>
+						{% endif %}
+					</span>
  				</p>
  			</div>
  		</div>
@@ -80,9 +83,9 @@
  					<span>发表日期：</span><span>{{date(page.date, 'YYYY-MM-DD HH:mm:ss')}}</span>
  				</li>
  				<li>
- 					{% if page.categories.length %}
+ 					<span>本文{{ __('category_title') }}：</span><span>
+	 					{% if page.categories.length %}
 		    			{# 组织分类的链接列表 #}
-						<span>本文{{ __('category_title') }}：</span><span>
 					    {% set i = 0 %}
 					    {% for cat in page.categories %}
 					      {% if i !== 0 %}
@@ -91,14 +94,15 @@
 					      {% set i = i + 1 %}
 					      <a href="{{ url_for(cat.path) }}">{{ cat.name }}</a>
 					    {% endfor %}
-					    </span>
-				    {% endif %}
+						{% else %}
+								<a href="#">{{__('no_item')}}</a>
+					  {% endif %}
+				  </span>
  				</li>
  				<li>
+ 					<span>本文{{ __('tag_title') }}：</span><span>
 				    {# 组织标签的链接列表 #}
 				    {% if page.tags.length %}
-					    <span>
-					    本文{{ __('tag_title') }}：</span><span>
 					    {% set i = 0 %}
 					    {% for tag in page.tags %}
 					      {% if i !== 0 %}
@@ -107,8 +111,10 @@
 					      {% set i = i + 1 %}
 					      <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
 					    {% endfor %}
-					    </span>
-					{% endif %}
+						{% else %}
+							<a href="#">{{__('no_item')}}</a>
+						{% endif %}
+					</span>
  				</li>
  				<li>
  					<span>最后编辑：</span><span>{{date(page.updated, 'YYYY-MM-DD HH:mm:ss')}}</span>
