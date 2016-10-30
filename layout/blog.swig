@@ -13,6 +13,9 @@
 			<div class="recent-one">
 				{% include 'includes/recent-one.swig' %}
 			</div>
+			<div class="recent-two">
+				{% include 'includes/recent-two.swig' %}
+			</div>
 			<div class="recent-posts">
 				{% include 'includes/recent-posts.swig' %}
 			</div>

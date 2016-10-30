@@ -76,20 +76,32 @@
                 }
             }
             & .weibo-frame{
-                height 400px
+                height 750px
                 border 1px solid #ccc
             }
         }
         /*
          * right part recent-one   
          */
-        & .recent-one{
+        & .recent-one,.recent-two{
             float right
             width 620px
             padding 15px
             background #f3f3f3
             border-radius 2px
             box-shadow 2px 2px 4px #e2e2e2
+            & span.aboutme{
+                    text-align right
+                    font-size 14px
+                    & a{
+                        display block
+                        color #4a75b5
+                        text-decoration underline
+                        &:hover{
+                            color black
+                        }
+                    }
+                }
             & h3{
                 font-size 22px
                 line-height 2
@@ -135,14 +147,10 @@
                         color #4a75b5
                     }
                 }
-                & span{
-                    text-align right
-                    font-size 14px
-                    & a{
-                        display block
-                    }
-                }
             }
+        }
+        & .recent-two{
+            margin-top 15px
         }
         & .recent-posts{
             float right
@@ -244,7 +252,7 @@
                     width 568px
                 }
             }
-            & .recent-one,.recent-posts{
+            & .recent-one,.recent-two,.recent-posts{
                 width 568px
             }
         }
@@ -274,11 +282,11 @@
                     width 100%
                 }
             }
-            & .recent-one,.recent-posts{
+            & .recent-one,.recent-two,.recent-posts{
                 box-sizing border-box
                 width 100%
             }
-            & .recent-one .post-content{
+            & .recent-one .post-content,.recent-two .post-content{
                 & .post-image{
                     margin-top 0px
                 }

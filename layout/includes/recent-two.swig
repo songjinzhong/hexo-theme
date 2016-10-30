@@ -1,8 +1,7 @@
 {% if site.posts.length > 0 %}
 	{% set sort_posts = site.posts.sort('date', -1) %}
-	{% set firstPost = sort_posts.toArray()[0] %}
+	{% set firstPost = sort_posts.toArray()[1] %}
 	{% set postTitle = firstPost.title || trim(strip_html(firstPost.content))  %}
-	<span class="aboutme"><a href="{{url_for(config.web_info_dir)}}">个人简介&联系方式</a></span>
 	<h3>
 		<a href="{{ url_for(firstPost.path) }}">
 			{% if postTitle.length < 50 %}
