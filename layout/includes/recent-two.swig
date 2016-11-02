@@ -2,6 +2,7 @@
 	{% set sort_posts = site.posts.sort('date', -1) %}
 	{% set firstPost = sort_posts.toArray()[1] %}
 	{% set postTitle = firstPost.title || trim(strip_html(firstPost.content))  %}
+	<span class="aboutme"><a href="/">返回 渔人 的主页</a></span>
 	<h3>
 		<a href="{{ url_for(firstPost.path) }}">
 			{% if postTitle.length < 50 %}
