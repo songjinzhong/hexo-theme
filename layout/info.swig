@@ -14,7 +14,7 @@
  			<p>My name is Song JinZhong (宋进忠). My blog's name is YuRen (渔人). I was born in 1994.</p>
  			<p>I am a Master degree candidate in Software Engineering at East China Normal University.</p>
  			<p>I like programming, I am a JS Lover and Open Source Lover, 我喜欢交朋友, You can contact me at <em>songjz.ecnu[at]gmail.com</em>.</p>
- 			<p>我正在努力寻找一份前端的实习&工作！(我更想做全栈)</p>
+ 			<p>我正在努力寻找一份前端的实习&工作！(我很想做全栈) <span class="resume">浏览我的<a href="{{url_for(config.resume_dir)}}">简历</a><span></p>
  			</div>
  		</div>
  		<div class="about-pape">
@@ -32,6 +32,7 @@
  			<ul>
  				<li><span>Github:</span><a href="{{theme.github}}">@songjinzhong</a></li>
  				<li><span> WeiBo :</span><a href="{{theme.weibo}}">微博</a></li>
+        <li><span>Resume :</span><a href="{{url_for(config.resume_dir)}}">简历</a></li>
  				<li><span>Old Blog:</span><a href="http://songjz.cn">旧博(不再使用)</a></li>
  				<li><span>Mail Me:</span><a href="mailto:songjz.ecnu@gmail.com">邮件</a></li>
  			</ul>
