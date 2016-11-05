@@ -8,7 +8,7 @@
  		<div class="post-info">
  			<h1>{{page.title}}</h1>
  			<div class="author-info">
- 				<p class="author">{{__('author')}}:<a href="{{config.root}}">{{__('name')}}</a></p>
+ 				<p class="author">{{__('author')}}:<a href="{{url_for(config.web_info_dir)}}">{{__('name')}}</a></p>
  				{# 时间 #}
  				<p class="date">{{__('time')}}:
  				<span>{{ date(page.date, 'YYYY/MM/DD') }}</span>
