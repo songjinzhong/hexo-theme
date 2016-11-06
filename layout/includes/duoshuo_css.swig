@@ -96,7 +96,7 @@
     }
 
 
-    #ds-thread #ds-reset .ds-comment-body a[data-user-id='6314610027441160961']::after {
+    #ds-thread #ds-reset .ds-comment-body a[data-user-id='6338703956201440002']::after {
     content: "博主";
     border: 1px solid #e58c7c;
     border-radius: 2px;
