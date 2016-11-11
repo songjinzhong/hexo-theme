@@ -2,9 +2,11 @@
 <html lang="{{ config.language }}">
 	{% include 'includes/head.swig' %}
 	<body class="homebody">
+	<div class="demo"></div>
 	{% include 'includes/svg.swig' %}
 	{% include 'includes/footer.swig' %}
 	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
+	<script type="text/javascript" src="/js/jquery.fireworks.js"></script>
 	<script type="text/javascript">
 		(function(){
 			$("#btn-close").on('click', showHideToggle);
@@ -22,6 +24,14 @@
 				hideAll = !hideAll;
 			}
 		})();
+		if(document.body.clientWidth > 1000){
+			$('.demo').fireworks({ 
+			  sound: true, // sound effect
+			  opacity: 0.5, 
+			  width: '100%', 
+			  height: '100%' 
+			});
+		}
 	</script>
 	</body>
 </html>
