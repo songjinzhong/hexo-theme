@@ -2,7 +2,7 @@
 <html lang="{{ config.language }}">
 	{% include 'includes/head.swig' %}
 	<body class="homebody">
-	<div class="demo"></div>
+	<div class="demo" style="position: absolute;height: 100%;width: 100%;opacity: 0.6;background: #000000;"></div>
 	{% include 'includes/svg.swig' %}
 	{% include 'includes/footer.swig' %}
 	<script type="text/javascript" src="/js/snap.svg-min.js"></script>
