@@ -149,8 +149,19 @@
 <h1 style="font-size:30px;">
 404
 </h1>
+{# 统计信息 #}
+    {# baidu Analytics #}
+    {% if config.baidu_tongji or theme.baidu_tongji %}
+        {% include 'includes/baidu-tongji.swig' %}
+    {% endif %}
 
-
-    
+    {# google Analytics #}
+    {% if config.google_tongji or theme.google_tongji %}
+        {% include 'includes/google-tongji.swig' %}
+    {% endif %}
+    {# zhanzhang Analytics #}
+    {% if config.zhanzhang_tongji or theme.zhanzhang_tongji %}
+        {% include 'includes/zhanzhang_tongji.swig' %}
+    {% endif %}
   </body>
 </html>

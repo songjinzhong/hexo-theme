@@ -3,7 +3,7 @@
 	{% for url in theme.scripts %}
 	<script src="{{ url_for(url) }}"></script>
 	{% endfor %}
-	{# baidi Analytics #}
+	{# baidu Analytics #}
 	{% if config.baidu_tongji or theme.baidu_tongji %}
 		{% include 'baidu-tongji.swig' %}
 	{% endif %}
