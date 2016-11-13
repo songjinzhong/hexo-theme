@@ -18,7 +18,7 @@
 		<span class="header hide" data-text="宋进忠"><p class="left">渔</p><p class="right">人</p></span>
 		<span class="about hide"><div><p data="浏览器、HTTP、CSS、JS、NodeJs、框架...">前端er</p></div><div><p data="上海、华东师范大学、计软学院、研究生、南京、实习...">学生</p></div><div><p data="写代码、Debug、改bug、狂论坛、学新技术、自黑...">程序员</p></div></span>
 		<div id="link" class="hide">
-			<a href="{{url_for(config.blog_home_dir)}}" title="我的博客">博客</a><a href="{{url_for(config.resume_dir)}}" title="我的简历">简历</a><a href="{{theme.github}}" title="我的GitHub">GitHub</a><a href="{{theme.weibo}}" title="我的微博">微博</a><a href="{{url_for(config.about_dir)}}" title="关于我">关于</a>
+			<a style="color:#FF9800" href="{{url_for(config.blog_home_dir)}}" title="我的博客">博客</a><a style="color:#CDDC39" href="{{url_for(config.resume_dir)}}" title="我的简历">简历</a><a href="{{theme.github}}" title="我的GitHub">GitHub</a><a href="{{theme.weibo}}" title="我的微博">微博</a><a href="{{url_for(config.about_dir)}}" title="关于我">关于</a>
 		</div>
 	</header>
 
