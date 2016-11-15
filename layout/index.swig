@@ -5,7 +5,6 @@
 	<div class="demo" style="position: absolute;height: 100%;width: 100%;opacity: 0.6;background: #000000;"></div>
 	{% include 'includes/svg.swig' %}
 	{% include 'includes/footer.swig' %}
-	<script type="text/javascript" src="/js/jquery.fireworks.js"></script>
 	<script type="text/javascript">
 		(function(){
 			$("#btn-close").on('click', showHideToggle);
@@ -45,7 +44,6 @@
     }
 		if(document.body.clientWidth > 800 && /Safari|Chrome/.test(getExploreName())){
 			$('.demo').fireworks({ 
-			  sound: false, // sound effect
 			  opacity: 0.6, 
 			  width: '100%', 
 			  height: '100%' 
