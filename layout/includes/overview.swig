@@ -11,6 +11,11 @@
 <font>» </font>
 <font class="last">{{__('about_web')}}</font>
 
+{% elseif page.layout == 'projects' %}
+<a href="{{ url_for(config.blog_home_dir) }}">{{ __('blog') }}</a>
+<font>» </font>
+<font class="last">{{__('projects')}}</font>
+
 {% elseif page.layout == 'categories' %}
 <a href="{{ url_for(config.blog_home_dir) }}">{{ __('blog') }}</a>
 <font>» </font>

@@ -27,4 +27,12 @@
 			});
 		</script>
 	{% endif %}#}
+	{% if page.layout == 'projects' %}
+	 	<script type="text/javascript">
+	 		$('#projects').showProjects({
+	 			name : 'songjinzhong',
+	 			loading : '<h3>正在从 GitHub 加载中...</h3>'
+	 		});
+	 	</script>
+	{% endif %}
 {% endif %}
