@@ -31,7 +31,7 @@
 	 	<script type="text/javascript">
 	 		$('#projects').showProjects({
 	 			name : 'songjinzhong',
-	 			loading : '<h3 class="loading">正在从 GitHub 加载中...</h3>'
+	 			loading : '<div class="load"><i class="loading-icon"></i></div><h3 class="loading">正在从 GitHub 加载中...</h3>'
 	 		});
 	 	</script>
 	{% endif %}

@@ -6,7 +6,7 @@
  			{% include 'includes/overview.swig' %}
  		</h1>
  		<div class="about-me clear">
- 			<p class="header"><strong>My Projects</strong><span>/我的项目</span></p>
+ 			<p class="header"><strong>My Projects</strong><span>/From GitHub</span></p>
  			<div id="projects"></div>
  		</div>
  		<div class="last-update">

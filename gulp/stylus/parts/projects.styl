@@ -3,6 +3,16 @@
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
+  & .load{
+    width 100%;
+    text-align center
+  }
+  & .loading-icon{
+    -webkit-animation: loading 2s infinite linear;
+    animation: loading 2s infinite linear;
+    font-size:40px;
+    display:inline-block;
+  }
   & .loading{
     font-weight 700;
   }
