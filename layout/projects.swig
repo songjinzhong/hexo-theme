@@ -10,10 +10,10 @@
  			<div id="projects"></div>
  		</div>
  		<div class="last-update">
- 			<span>最后修改时间:{{date(page.updated, 'YYYY年MM月DD日')}}</span>
+ 			<span>最后修改时间:{{date(page.date, 'YYYY年MM月DD日')}}</span>
  		</div>
  		{% if page.comments %}
-	 		<div class="duoshuo-part">
+	 		<div class="duoshuo-part" id="comments">
 				{% include 'includes/duoshuo.swig' %}
 			</div>
 		{% endif %}

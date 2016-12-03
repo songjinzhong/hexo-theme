@@ -16,9 +16,9 @@
 			id = (option.filter && option.filter.id) || [];
 
 		var template = '<div class="p-item">'+
-				'<div class="p-header"><a href="[repo.html_url]"><h3>[repo.name]</h3></a></div>'+
+				'<div class="p-header"><a href="[repo.html_url]" target="_black"><h3>[repo.name]</h3></a></div>'+
 				'<div class="p-body"><p>[repo.description]</p></div>'+
-				'<div class="p-footer"><span>L：[repo.language]</span><span>S：[repo.stargazers_count]</span><span>F：[repo.forks_count]</span></div>'+
+				'<div class="p-footer"><span><i class="daima-icon"></i>[repo.language]</span><span><i class="star-icon"></i>[repo.stargazers_count]</span><span><i class="fork-icon"></i>[repo.forks_count]</span></div>'+
 			'</div>';
 		projects.length > 0 && projects.html(option.loading) && $.get("https://api.github.com/users/"+ option.name +"/repos?type=owner", function(data){
 			if(data){
