@@ -24,7 +24,7 @@
     </div>
     <div id="link" class="step" data-x="-500" data-y="2000" data-rotate="90" data-scale="2">
     <p>您可以在<a class="button" href="http://weibo.com/songjinz">新浪微博</a>或者<a class="button" href="https://github.com/songjinzhong">Github</a>上找到我</p>
-        <q>也可以逛一逛<a class="button" href="#">这个网站</a>，看一看我做过的项目</q>
+        <q>也可以逛一逛<a class="button" href="{{url_for(config.projects_dir)}}">这个网站</a>，看一看我做过的项目</q>
     </div>
     <div id="place" class="step" data-x="3000" data-y="-1500">
         <div>生于珠城（蚌埠）</div>
