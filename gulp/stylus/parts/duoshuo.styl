@@ -1,0 +1,17 @@
+div#ds-waiting{
+  font-size: 40px;
+  display: inline-block;
+  &:before{
+    font-style: normal;
+    font-family: icomoon2;
+    content: "\e97a";
+    -webkit-animation: loading 2s infinite linear;
+    animation: loading 2s infinite linear;
+    display:inline-block;
+  }
+  &:after{
+    content: '加载多说评论模块中...';
+    font-size: 18px;
+    padding-left: 15px;
+  }
+}
