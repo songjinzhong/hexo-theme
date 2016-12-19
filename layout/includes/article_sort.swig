@@ -14,11 +14,12 @@
 			  	{% endfor %}
 			{% endfor %}
 			{% set id = 10 %}
-			{% for a in site.categories %}
+			{% set arr = sortCategories(catMuch) %}
+			{% for a in arr %}
 				{% if id > 0 %}
 				<li>
-					<a href="{{ url_for('/blog/categories/'+a.name) }}">{{a.name}}</a>
-					<span>{{catMuch[a.name]}}</span>
+					<a href="{{ url_for('/blog/categories/'+a) }}">{{a}}</a>
+					<span>{{catMuch[a]}}</span>
 				</li>
 				{% set id = id - 1 %}
 				{% endif %}
@@ -26,4 +27,4 @@
 			<li><a href="{{ url_for('/blog/categories') }}">{{__('more_archives')}}...</a></li>
       	{% endif %}
 	</ul>
-</div>
+</div>{% set aa = sortCategories() %}{{aa}}
