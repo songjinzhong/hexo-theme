@@ -34,7 +34,7 @@
  				<li><span>Github:</span><a href="{{theme.github}}">@songjinzhong</a></li>
  				<li><span> WeiBo :</span><a href="{{theme.weibo}}">微博</a></li>
         <li><span>Resume :</span><a href="{{url_for(config.resume_dir)}}">简历</a></li>
-        <li><span>Resume :</span><a href="{{url_for(config.projects_dir)}}">我的项目</a></li>
+        <li><span>Projects :</span><a href="{{url_for(config.projects_dir)}}">我的项目</a></li>
  				<li><span>Old Blog:</span><a href="http://songjz.cn">旧博(不再使用)</a></li>
  				<li><span>Mail Me:</span><a href="mailto:songjz.ecnu@gmail.com">邮件</a></li>
  			</ul>
