@@ -26,11 +26,11 @@
 			if(data){
 				projects.html("");
 				data = data.filter(function(a){
-					return null != a.description && (a.fork == false || option.fork) && name.indexOf(a.name) == -1 && id.indexOf(a.id) == -1;
+					return null !== a.description && (a.fork === false || option.fork) && name.indexOf(a.name) == -1 && id.indexOf(a.id) == -1;
 				});
 				data = data.sort(function(a, b){
 					return b.stargazers_count - a.stargazers_count|| b.forks_count - a.forks_count;
-				})
+				});
 				var item = "";
 				if(option.maxNum > 0 && option.maxNum < data.length){
 					data = data.slice(0,option.maxNum);
@@ -45,7 +45,7 @@
 			}else{
 				projects.html('<div><h3>加载失败</h3><p>请刷新或稍后再试...</p></div>');
 			}
-		})
-	}
+		});
+	};
 	$.prototype.showProjects = showProjects;
-})($)
+})($);

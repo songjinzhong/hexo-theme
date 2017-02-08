@@ -9,30 +9,30 @@
     /* The lunr 0.7.0 library is included here to perform the fulltext searching. lunr is copyright (C) 2016 Oliver Nightingale. MIT Licensed */
     function isChineseChar(t) {
         var e = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
-        return e.test(t)
+        return e.test(t);
     }
     var lunr = function(t) {
         var e = new lunr.Index;
-        return e.pipeline.add(lunr.trimmer, lunr.stopWordFilter, lunr.stemmer), t && t.call(e, e), e
+        return e.pipeline.add(lunr.trimmer, lunr.stopWordFilter, lunr.stemmer), t && t.call(e, e), e;
     };
     lunr.version = "0.5.3", lunr.utils = {}, lunr.utils.warn = function(t) {
         return function(e) {
-            t.console && console.warn && console.warn(e)
-        }
+            t.console && console.warn && console.warn(e);
+        };
     }(this), lunr.EventEmitter = function() {
-        this.events = {}
+        this.events = {};
     }, lunr.EventEmitter.prototype.addListener = function() {
         var t = Array.prototype.slice.call(arguments),
             e = t.pop(),
             n = t;
         if ("function" != typeof e) throw new TypeError("last argument must be a function");
         n.forEach(function(t) {
-            this.hasHandler(t) || (this.events[t] = []), this.events[t].push(e)
+            this.hasHandler(t) || (this.events[t] = []), this.events[t].push(e);
         }, this)
     }, lunr.EventEmitter.prototype.removeListener = function(t, e) {
         if (this.hasHandler(t)) {
             var n = this.events[t].indexOf(e);
-            this.events[t].splice(n, 1), this.events[t].length || delete this.events[t]
+            this.events[t].splice(n, 1), this.events[t].length || delete this.events[t];
         }
     }, lunr.EventEmitter.prototype.emit = function(t) {
         if (this.hasHandler(t)) {
@@ -42,23 +42,23 @@
             })
         }
     }, lunr.EventEmitter.prototype.hasHandler = function(t) {
-        return t in this.events
+        return t in this.events;
     }, lunr.tokenizer = function(t) {
         if (!arguments.length || null == t || void 0 == t) return [];
         if (Array.isArray(t)) return t.map(function(t) {
-            return t.toLowerCase()
+            return t.toLowerCase();
         });
         for (var e = t.toString().replace(/^\s+/, ""), n = e.length - 1; n >= 0; n--)
             if (/\S/.test(e.charAt(n))) {
                 e = e.substring(0, n + 1);
-                break
+                break;
             }
         var r = e.split(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|︰-ﾠ|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]+/).map(function(t) {
             return t.replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\uFE30-\uFFA0|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "").toLowerCase()
         });
-        return r
+        return r;
     }, lunr.Pipeline = function() {
-        this._stack = []
+        this._stack = [];
     }, lunr.Pipeline.registeredFunctions = {}, lunr.Pipeline.registerFunction = function(t, e) {
         e in this.registeredFunctions && lunr.utils.warn("Overwriting existing registered function: " + e), t.label = e, lunr.Pipeline.registeredFunctions[t.label] = t
     }, lunr.Pipeline.warnIfFunctionNotRegistered = function(t) {
@@ -69,7 +69,7 @@
         return t.forEach(function(t) {
             var n = lunr.Pipeline.registeredFunctions[t];
             if (!n) throw new Error("Cannot load un-registered function: " + t);
-            e.add(n)
+            e.add(n);
         }), e
     }, lunr.Pipeline.prototype.add = function() {
         var t = Array.prototype.slice.call(arguments);
