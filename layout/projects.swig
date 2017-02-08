@@ -12,6 +12,11 @@
  		<div class="last-update">
  			<span>最后修改时间:{{date(page.date, 'YYYY年MM月DD日')}}</span>
  		</div>
+    <div class="github-source">
+      <p>
+        本页已经在 <a href="https://github.com/songjinzhong/showGitHubProjects" target="_blank">GitHub</a> 上开源，欢迎来访。
+      </p>
+    </div>
  		{% if page.comments %}
 	 		<div class="duoshuo-part" id="comments">
 				{% include 'includes/duoshuo.swig' %}
