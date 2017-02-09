@@ -4,6 +4,7 @@ var my_fun = {
 		this.searchModule();
         this.back_to_top();
         this.go_to_comments();
+        this.closeToc();
 	},
 	insertWeiBo : function(){
 		var weibo_html = '<iframe width="330" height="750" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=330&height=750&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3822969136&verifier=d420dd2b&dpc=1"></iframe>';
@@ -35,6 +36,23 @@ var my_fun = {
             e.preventDefault();
             ghostHunter.clear();
             $bigSearchContainer.removeClass('open');
+        });
+    },
+    closeToc: function(){
+        var $tocCloseButton = $('.toc-icon');
+        var $tocContainer = $('.toc');
+        var open = true;
+        $tocCloseButton.on('click', function(e){
+            e.preventDefault();
+            if(open){
+                $tocContainer.addClass('close');
+                $tocCloseButton.css({'transform': 'rotate(45deg)'});
+                open = false;
+            }else{
+                $tocContainer.removeClass('close');
+                $tocCloseButton.removeAttr('style');
+                open = true;
+            }
         });
     },
     back_to_top : function(){
