@@ -1,6 +1,12 @@
 {% extends 'includes/layout.swig' %}
 
 {% block body %}
+	<div id="toc">
+		<div class="toc-header">
+			文章目录
+		</div>
+		{{ toc(page.content) }}
+	</div>
  	<div class="post">
  		<h1 class="overview">
  			{% include 'includes/overview.swig' %}
