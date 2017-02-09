@@ -3,6 +3,7 @@
 {% block body %}
 	<div id="toc">
 		<div class="toc-header">
+			<i class="toc-icon"></i>
 			文章目录
 		</div>
 		{{ toc(page.content) }}
