@@ -2,11 +2,14 @@
   position fixed
   top 0px
   left 50%
-  width 150px
   padding 10px 0 10px 0
   z-index 2
   margin-left 400px
+  margin-top 8px
   line-height 1.5
+  background-color rgba(242, 243, 241, 0.6)
+  padding-right 5px
+  width 160px
   & .toc-icon{
     font-size 14px
     position absolute
@@ -19,13 +22,16 @@
     font-weight: 700;
     border: none;
     padding: 8px 12px;
-    font-size: 18px;
+    font-size: 20px;
     position relative
+  }
+  & .close{
+    display none
   }
   & .toc{
     list-style none
     position relative
-    font-size 14px
+    font-size 16px
     padding-left 8px
     overflow-x: hidden;
     & a{
@@ -43,6 +49,7 @@
     }
     & .toc-child{
       margin-left 10px
+      font-size 12px
       & span.toc-number{
         display none
       }
