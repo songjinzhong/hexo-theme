@@ -13,7 +13,29 @@ var my_fun = {
             email: "我的邮件：songjz.ecnu@gmail.com",
             webinfo: "网站信息：http://yuren.space/blog/web-info/",
             resume: "我的简历：http://yuren.space/resume/"
-        }
+        },
+        buddha: [
+            " .............................................  ",
+            "          佛祖保佑             永无BUG ",
+            "                    _ooOoo_  ",
+            "                   o8888888o  ",
+            '                   88" . "88  ',
+            "                   (| -_- |)  ",
+            "                    O\\ = /O  ",
+            "                ____/`---'\\____  ",
+            "              .   ' \\\\| |// `.  ",
+            "               / \\\\||| : |||// \\  ",
+            "             / _||||| -:- |||||- \\  ",
+            "               | | \\\\\\ - /// | |  ",
+            "             | \\_| ''\\---/'' | |  ",
+            "              \\ .-\\__ `-` ___/-. /  ",
+            "           ___`. .' /--.--\\ `. . __  ",
+            "        .\"\" '< `.___\\_<|>_/___.' >'\"\".  ",
+            "       | | : `- \\`.;`\\ _ /`;.`/ - ` : | |  ",
+            "         \\ \\ `-. \\_ __\\ /__ _/ .-` / /  ",
+            " ======`-.____`-.___\\_____/___.-`____.-'======  ",
+            "                    `=---='  ",
+        ]
     },
 	insertWeiBo : function(){
 		var weibo_html = '<iframe width="330" height="750" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=330&height=750&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3822969136&verifier=d420dd2b&dpc=1"></iframe>';
@@ -102,6 +124,11 @@ var my_fun = {
                     console.log(data.webinfo);
                     console.log(data.resume);
                 }, 500);
+                setTimeout(function(){
+                    self.data.buddha.forEach(function(d){
+                        console.log(d);
+                    });
+                },1000)
             });
         }
     }
