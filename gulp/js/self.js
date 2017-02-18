@@ -5,7 +5,16 @@ var my_fun = {
         this.back_to_top();
         this.go_to_comments();
         this.closeToc();
+        this.consoleToYou();
 	},
+    data: {
+        showConsole: {
+            welcome: "欢迎来到/渔人/的个人博客",
+            email: "我的邮件：songjz.ecnu@gmail.com",
+            webinfo: "网站信息：http://yuren.space/blog/web-info/",
+            resume: "我的简历：http://yuren.space/resume/"
+        }
+    },
 	insertWeiBo : function(){
 		var weibo_html = '<iframe width="330" height="750" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=330&height=750&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3822969136&verifier=d420dd2b&dpc=1"></iframe>';
 		var $w_b = $('.weibo-frame');
@@ -81,6 +90,20 @@ var my_fun = {
                 window.location.hash = "#comments";
             }
         });
+    },
+    consoleToYou: function(){
+        var self = this;
+        if(window.console && window.console.log){
+            $(window).on('load', function(){
+                var data = self.data.showConsole;
+                setTimeout(function(){
+                    console.log(data.welcome);
+                    console.log(data.email);
+                    console.log(data.webinfo);
+                    console.log(data.resume);
+                }, 500);
+            });
+        }
     }
 };
 $(function(){
