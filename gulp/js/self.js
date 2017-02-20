@@ -142,9 +142,8 @@ var my_fun = {
 			$headerlink = $('.headerlink');
 
 		var headerlinkTop = $.map($headerlink, function(link) {
-			return $(link).offset().top;
+			return $(link.parentNode).offset().top;
 		});
-
 		$(window).scroll(function() {
 			var scrollTop = $(window).scrollTop();
 			for (var i = 0; i < $toclink.length; i++) {
@@ -161,7 +160,14 @@ var my_fun = {
 		});
 	}
 };
+
+/* 不好用
 $(function(){
+  my_fun.init();
+});
+*/
+
+$(document).ready(function(){
   my_fun.init();
 });
 $(window).on("resize", function() {
