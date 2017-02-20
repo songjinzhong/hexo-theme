@@ -98,10 +98,10 @@
 
     #ds-thread #ds-reset .ds-comment-body a[data-user-id='6338703956201440002']::after {
     content: "博主";
-    border: 1px solid #e58c7c;
+    border: 1px solid #4a75b5;
     border-radius: 2px;
     margin-left: 4px;
-    color: #e58c7c;
+    color: #4a75b5;
     padding: 0 2px;
     font-size: 12px;
     line-height: 14px;
@@ -149,44 +149,6 @@
     div#ds-thread #ds-reset .ds-post-options {
     overflow: hidden;
     }
-
-    /*
-     * my css here
-     */
-    /*
-    div#ds-thread #ds-reset{
-        margin-bottom: 130px
-    }
-    div#ds-thread #ds-reset .ds-comments-info{
-        padding-top: 311px;
-        border-bottom: 1px solid rgba(0,0,0,0.13);
-    }
-    div#ds-thread #ds-reset .ds-comments-info .ds-sort{
-        top:311px;
-    }
-    div#ds-thread #ds-reset .ds-replybox{
-        position: absolute;
-        top:77px;
-        width: calc(100% - 60px)
-    }
-    div#ds-thread #ds-reset .ds-login-buttons{
-        position: absolute;
-        top:40px;
-    }
-    div#ds-thread #ds-reset .ds-toolbar{
-        position: absolute;
-        top:40px;
-    }
-
-    div#ds-thread #ds-reset .ds-replybox.ds-inline-replybox{
-        position: relative;
-        top:0px;
-        width: auto;
-    }*/
-
-    /*
-     * my css over
-     */
 
     div#ds-thread #ds-reset .ds-post-toolbar {
     box-shadow: none;
