@@ -136,27 +136,52 @@ var my_fun = {
 	},
 	// 实现监听滚动
 	scroll2Toc: function(){
+    // 判断是非为 post 页面
+    if(!($("#toc")[0])){
+      return ;
+    }
+
+    var $w = $(window);
+
+    //判断宽度是非满足条件
+    if($w.width() <= 1090){
+      return ;
+    }
+
 		// 修正响应不及时的问题
 		var HEADFIX = 30;
 		var $toclink = $('.toc-link'),
 			$headerlink = $('.headerlink');
 
 		var headerlinkTop = $.map($headerlink, function(link) {
-			return $(link.parentNode).offset().top;
+			return $(link.parentNode).offset().top - HEADFIX;
 		});
-		$(window).scroll(function() {
-			var scrollTop = $(window).scrollTop();
-			for (var i = 0; i < $toclink.length; i++) {
-				var isLastOne = i + 1 === $toclink.length,
-					currentTop = headerlinkTop[i] - HEADFIX,
-					nextTop = isLastOne ? Infinity : headerlinkTop[i + 1] - HEADFIX;
 
-				if (currentTop < scrollTop && scrollTop <= nextTop) {
-					$($toclink[i]).addClass('active')
-				} else {
-					$($toclink[i]).removeClass('active')
-				}
-			}
+    // 修正参数
+    headerlinkTop[0] = -1;
+    headerlinkTop.push(Infinity);
+
+    var pos = 0;
+    var getActive = function(s_top){
+      for(var i = 0; i < $toclink.length; i++){
+        var currentTop = headerlinkTop[i];
+        var nextTop = headerlinkTop[i+1];
+
+        if(s_top > currentTop && s_top <= nextTop){
+          $toclink.removeClass('active');
+          pos = i;
+          $($toclink[i]).addClass('active');
+          break;
+        }
+      }
+    }
+    getActive($w.scrollTop());
+
+		$w.scroll(function() {
+			var scrollTop = $w.scrollTop();
+      if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
+        getActive(scrollTop);
+      }
 		});
 	}
 };
