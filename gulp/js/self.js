@@ -147,7 +147,7 @@ var my_fun = {
     if($w.width() <= 1090){
       return ;
     }
-
+    
 		// 修正响应不及时的问题
 		var HEADFIX = 30;
 		var $toclink = $('.toc-link'),
@@ -197,4 +197,5 @@ $(document).ready(function(){
 });
 $(window).on("resize", function() {
 	my_fun.insertWeiBo();
+	my_fun.scroll2Toc();
 });
