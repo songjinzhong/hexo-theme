@@ -41,18 +41,19 @@
         text-decoration none
       }
     }
-    & span.toc-number{
-      font-size 20px
-    }
     & ol, & ul{
-      list-style none
+      list-style-type disc
     }
     & .toc-child{
-      margin-left 10px
+      padding-left 20px
       font-size 12px
+      display none
       & span.toc-number{
         display none
       }
+    }
+    & .active~.toc-child{
+      display block
     }
     & .toc-link{
       white-space nowrap
