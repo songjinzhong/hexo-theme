@@ -151,7 +151,8 @@ var my_fun = {
 		// 修正响应不及时的问题
 		var HEADFIX = 30;
 		var $toclink = $('.toc-link'),
-			$headerlink = $('.headerlink');
+			$headerlink = $('.headerlink'),
+			$tocchild = $('.toc-child');
 
 		var headerlinkTop = $.map($headerlink, function(link) {
 			return $(link.parentNode).offset().top - HEADFIX;
@@ -169,8 +170,14 @@ var my_fun = {
 
         if(s_top > currentTop && s_top <= nextTop){
           $toclink.removeClass('active');
+          $tocchild.removeClass('toc-show');
           pos = i;
-          $($toclink[i]).addClass('active');
+          var nowlink = $toclink[i];
+          $(nowlink).addClass('active');
+          while($(nowlink.parentNode.parentNode).hasClass('toc-child')){
+          	nowlink = nowlink.parentNode.parentNode;
+          	$(nowlink).addClass('toc-show');
+          }
           break;
         }
       }
