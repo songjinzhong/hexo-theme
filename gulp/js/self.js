@@ -191,12 +191,31 @@ var my_fun = {
     }
     getActive($w.scrollTop());
 
+    // 修复 image load bug
+    var link_length = $headerlink.length;
+    var $link_last = link_length > 1 ? $($headerlink[$headerlink.length - 1].parentNode) : null;
+    var fixLoading = function(){
+      if(link_length > 1 ){
+        if(($link_last.offset().top - HEADFIX) - headerlinkTop[link_length - 1] != 0){
+          headerlinkTop = $.map($headerlink, function(link) {
+            return $(link.parentNode).offset().top - HEADFIX;
+          });
+          // 修正参数
+          headerlinkTop[0] = -1;
+          headerlinkTop.push(Infinity);
+          console.log('fix loading bug!');
+        }
+      }
+    }
+
     if(!this.doScroll){
       this.doScroll = true;
       $w.scroll(function() {
         var scrollTop = $w.scrollTop();
+        fixLoading();
         if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
           getActive(scrollTop);
+          console.log('jump!');
         }
       });
     }
@@ -212,9 +231,6 @@ $(function(){
 $(document).ready(function(){
   my_fun.init();
 });
-$('.img-mid').on('load', function(){
-  my_fun.scroll2Toc();
-})
 $(window).on("resize", function() {
 	my_fun.insertWeiBo();
 	my_fun.scroll2Toc();
