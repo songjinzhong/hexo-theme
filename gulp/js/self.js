@@ -1,7 +1,13 @@
 var my_fun = {
   init : function(){
-	this.insertWeiBo();
-	this.searchModule();
+
+    // init data
+    this.$w = $(window);
+    this.headerlinkTop = [];
+    this.doScroll = false;
+
+	  this.insertWeiBo();
+	  this.searchModule();
 		this.back_to_top();
 		this.go_to_comments();
 		this.closeToc();
@@ -141,7 +147,7 @@ var my_fun = {
       return ;
     }
 
-    var $w = $(window);
+    var $w = this.$w;
 
     //判断宽度是非满足条件
     if($w.width() <= 1090){
@@ -154,7 +160,8 @@ var my_fun = {
 			$headerlink = $('.headerlink'),
 			$tocchild = $('.toc-child');
 
-		var headerlinkTop = $.map($headerlink, function(link) {
+		var headerlinkTop = this.headerlinkTop;
+    headerlinkTop = $.map($headerlink, function(link) {
 			return $(link.parentNode).offset().top - HEADFIX;
 		});
 
@@ -184,12 +191,15 @@ var my_fun = {
     }
     getActive($w.scrollTop());
 
-		$w.scroll(function() {
-			var scrollTop = $w.scrollTop();
-      if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
-        getActive(scrollTop);
-      }
-		});
+    if(!this.doScroll){
+      this.doScroll = true;
+      $w.scroll(function() {
+        var scrollTop = $w.scrollTop();
+        if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
+          getActive(scrollTop);
+        }
+      });
+    }
 	}
 };
 
@@ -202,6 +212,9 @@ $(function(){
 $(document).ready(function(){
   my_fun.init();
 });
+$('.img-mid').on('load', function(){
+  my_fun.scroll2Toc();
+})
 $(window).on("resize", function() {
 	my_fun.insertWeiBo();
 	my_fun.scroll2Toc();
