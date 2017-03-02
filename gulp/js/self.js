@@ -219,7 +219,18 @@ var my_fun = {
         }
       });
     }
-	}
+	},
+  // 防止抖动
+  debounce: function(fn, delay){
+    var timer = null,
+      self = this;
+    return function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        fn.apply(self, arguments);
+      }, delay)
+    }
+  }
 };
 
 /* 不好用
