@@ -212,7 +212,6 @@ var my_fun = {
 
     // callback 抖动函数
     var cb = function(){
-      console.log('cb')
       var scrollTop = $w.scrollTop();
       fixLoading();
       if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
@@ -223,8 +222,7 @@ var my_fun = {
 
     if(!this.doScroll){
       this.doScroll = true;
-      console.log('scroll')
-      $w.scroll(debounce(cb, 100));
+      $w.scroll(debounce(cb, 50));
     }
 	},
 
