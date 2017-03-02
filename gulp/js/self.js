@@ -160,6 +160,8 @@ var my_fun = {
 			$headerlink = $('.headerlink'),
 			$tocchild = $('.toc-child');
 
+    var debounce = this.debounce;
+
 		var headerlinkTop = this.headerlinkTop;
     headerlinkTop = $.map($headerlink, function(link) {
 			return $(link.parentNode).offset().top - HEADFIX;
@@ -208,18 +210,25 @@ var my_fun = {
       }
     }
 
+    // callback 抖动函数
+    var cb = function(){
+      console.log('cb')
+      var scrollTop = $w.scrollTop();
+      fixLoading();
+      if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
+        getActive(scrollTop);
+        console.log('jump!');
+      }
+    }
+
     if(!this.doScroll){
       this.doScroll = true;
-      $w.scroll(function() {
-        var scrollTop = $w.scrollTop();
-        fixLoading();
-        if(scrollTop > headerlinkTop[pos + 1] || scrollTop <= headerlinkTop[pos]){
-          getActive(scrollTop);
-          console.log('jump!');
-        }
-      });
+      console.log('scroll')
+      $w.scroll(debounce(cb, 100));
     }
 	},
+
+
   // 防止抖动
   debounce: function(fn, delay){
     var timer = null,
