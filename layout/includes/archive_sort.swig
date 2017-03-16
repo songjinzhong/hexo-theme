@@ -188,7 +188,11 @@
 			    		<h4>{{thisMonth}}{{__('month')}}</h4>
 			    		<ul>
 			    	{% endif %}
-					<li>
+		    		{% if postItem.hot %}
+			    	<li class="hot">
+			    	{% else %}
+			    	<li>
+			    	{% endif %}
 				 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
 				 		<a href="{{ url_for(postItem.path) }}">
 				 			{% if postTitle.length < 40 %}
@@ -215,7 +219,11 @@
 					    </span>
 				 	</li>
 		    	{% else %}
+		    		{% if postItem.hot %}
+			    	<li class="hot">
+			    	{% else %}
 			    	<li>
+			    	{% endif %}
 				 		{% set postTitle = postItem.title || trim(strip_html(postItem.content))  %}
 				 		<a href="{{ url_for(postItem.path) }}">
 				 			{% if postTitle.length < 40 %}

@@ -83,6 +83,19 @@
                         }
                     }
                 }
+                & li.hot{
+                    background #ebf1f5
+                    & a{
+                        padding-left 5px
+                    }
+                    &::before{
+                        content 'HOT!'
+                        color: red;
+                        font-style: italic;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
                 & h4{
                     font-size 20px
                     color #999
