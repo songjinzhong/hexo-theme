@@ -20,8 +20,11 @@
 				{% include 'includes/recent-posts.swig' %}
 			</div>
 		</div>
-		<div class="duoshuo-part">
+{# 		<div class="duoshuo-part">
 			{% include 'includes/duoshuo.swig' %}
+		</div> #}
+		<div class="disqus-part">
+			{% include 'includes/disqus.swig' %}
 		</div>
 		{% include 'includes/web-info.swig' %}
 	</div>
