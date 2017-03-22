@@ -124,7 +124,7 @@ var my_fun = {
 	consoleToYou: function(){
 		var self = this;
 		if(window.console && window.console.log){
-			$(window).on('load', function(){
+			$(document).ready(function(){
 				var data = self.data.showConsole;
 				setTimeout(function(){
 					console.log(data.welcome);
