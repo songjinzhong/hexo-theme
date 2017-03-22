@@ -154,8 +154,11 @@
  			</ul>
  		</div>
  		{% if page.comments %}
-	 		<div class="duoshuo-part" id="comments">
+{# 	 		<div class="duoshuo-part" id="comments">
 				{% include 'includes/duoshuo.swig' %}
+			</div> #}
+			<div class="disqus-part" id="comments">
+				{% include 'includes/disqus.swig' %}
 			</div>
 		{% endif %}
  		{% include 'includes/web-info.swig' %}

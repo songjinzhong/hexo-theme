@@ -43,9 +43,12 @@
  			<span>最后修改时间:{{date(page.date, 'YYYY年MM月DD日')}}</span>
  		</div>
  		{% if page.comments %}
-	 		<div class="duoshuo-part">
+{# 	 		<div class="duoshuo-part">
 				{% include 'includes/duoshuo.swig' %}
-			</div>
+			</div> #}
+      <div class="disqus-part" id="comments">
+        {% include 'includes/disqus.swig' %}
+      </div>
 		{% endif %}
  		{% include 'includes/web-info.swig' %}
  	</div>
