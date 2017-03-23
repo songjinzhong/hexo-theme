@@ -5,7 +5,7 @@
 {% set title = page.title %}
 {% set url = config.url + config.root + page.path %}
 <div id="disqus_thread">
-    <p>Disqus 被墙了，请翻墙查看评论！</p>
+    <p class="disqus-error">Disqus 被墙了，很遗憾，评论无法显示！</p>
 </div>
 <script>
 var disqus_config = function () {
