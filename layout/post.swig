@@ -131,18 +131,7 @@
  				</li>
  				<li>
  					<span>{{__('share')}}：</span>
- 					<span>
-						<div class="ds-share" data-thread-key="{{page.path}}" data-title="{{page.title}}" data-images="" data-content="{{truncate(strip_html(page.content),{length : 120})}}" data-url="{{page.permalink}}">
-						    <div class="ds-share-inline">
-						      <ul  class="ds-share-icons-16">
-						        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-						        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-						        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-						      </ul>
-						      <div class="ds-share-icons-more">
-						      </div>
-						    </div>
-					 	</div>
+ 					<span class="share"><a href="http://service.weibo.com/share/share.php?url={{truncate(strip_html(page.content),{length : 120})}}&amp;url={{ page.permalink }}" onclick="window.open(this.href);return false;" target="_blank">微博</a><a href="https://plus.google.com/share?url={{ page.permalink }}" onclick="window.open(this.href);return false;" target="_blank">Google+</a>
  					</span>
  				</li>
  			</ul>
