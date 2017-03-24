@@ -13,6 +13,7 @@ var my_fun = {
 		this.closeToc();
 		this.consoleToYou();
     this.scroll2Toc();
+    this.showDisqus();
   },
 	data: {
 		showConsole: {
@@ -237,6 +238,24 @@ var my_fun = {
         fn.apply(self, arguments);
       }, delay)
     }
+  },
+
+  // show disqus
+  showDisqus: function(){
+    var doOnce = function(){
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yurenspace.disqus.com/embed.js';
+      s.async = true;
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      console.log('show disqus!')
+    }
+    var $w = this.$w,
+      debounce = this.debounce;
+    var cb = debounce(function(){
+      console.log('scroll');
+    }, 30);
+    $w.on('scroll', cb);
   }
 };
 
