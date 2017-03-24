@@ -253,7 +253,11 @@ var my_fun = {
     var $w = this.$w,
       debounce = this.debounce;
     var cb = debounce(function(){
-      console.log('scroll');
+      var disqus = $('#disqus_thread');
+      if($w.scrollTop() + $w.height() + 30 >= disqus.offset().top){
+        doOnce();
+        $w.off('scroll', cb);
+      }
     }, 30);
     $w.on('scroll', cb);
   }
