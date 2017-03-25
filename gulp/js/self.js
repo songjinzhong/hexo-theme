@@ -248,18 +248,20 @@ var my_fun = {
       s.async = true;
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
-      console.log('show disqus!')
+      console.log('Show disqus!');
     }
     var $w = this.$w,
+      disqus = $('#disqus_thread'),
       debounce = this.debounce;
     var cb = debounce(function(){
-      var disqus = $('#disqus_thread');
       if($w.scrollTop() + $w.height() + 30 >= disqus.offset().top){
         doOnce();
         $w.off('scroll', cb);
       }
     }, 30);
-    $w.on('scroll', cb);
+    if(disqus.length){
+      $w.on('scroll', cb);
+    }
   }
 };
 
