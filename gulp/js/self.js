@@ -161,7 +161,8 @@ var my_fun = {
 			$headerlink = $('.headerlink'),
 			$tocchild = $('.toc-child');
 
-    var debounce = this.debounce;
+    //var debounce = this.debounce;
+    var throttle = this.throttle;
 
 		var headerlinkTop = this.headerlinkTop;
     headerlinkTop = $.map($headerlink, function(link) {
@@ -223,7 +224,8 @@ var my_fun = {
 
     if(!this.doScroll){
       this.doScroll = true;
-      $w.scroll(debounce(cb, 50));
+      //$w.scroll(debounce(cb, 50));
+      $w.scroll(throttle(cb, 50, 300));
     }
 	},
 
@@ -233,10 +235,28 @@ var my_fun = {
     var timer = null,
       self = this;
     return function(){
+      var args = arguments;
       clearTimeout(timer);
       timer = setTimeout(function(){
-        fn.apply(self, arguments);
+        fn.apply(self, args);
       }, delay)
+    }
+  },
+
+  //节流函数
+  throttle: function(fn, delay, mustRun){
+    var timer = null, startTime = new Date(), self = this;
+    return function(){
+      var args = arguments, now = new Date();
+      clearTimeout(timer);
+      if(now - startTime >= mustRun){
+        startTime = now;
+        fn.apply(self, args);
+      }else{
+        timer = setTimeout(function(){
+          fn.apply(self, args);
+        }, delay)
+      }
     }
   },
 
