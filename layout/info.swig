@@ -47,6 +47,7 @@
 				{% include 'includes/duoshuo.swig' %}
 			</div> #}
       <div class="disqus-part" id="comments">
+        <p class="header"><strong>About the Comments</strong><span>/发表评论</span></p>
         {% include 'includes/disqus.swig' %}
       </div>
 		{% endif %}

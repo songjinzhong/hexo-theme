@@ -147,6 +147,7 @@
 				{% include 'includes/duoshuo.swig' %}
 			</div> #}
 			<div class="disqus-part" id="comments">
+				<h2>{{ __('comments-part') }}</h2>
 				{% include 'includes/disqus.swig' %}
 			</div>
 		{% endif %}
