@@ -269,16 +269,38 @@ var my_fun = {
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
       console.log('Show disqus!');
+      var random = ['#ffeb3b', '#009688', '#795548', '#673ab7', '#ff5722', '#9c27b0']
+      var error, r;
+      var loading = setInterval(function(){
+        error = disqus.find('.disqus-error');
+        r = random.shift();
+        random.push(r);
+        if(error.length){
+          error.css({
+            color: r
+          })
+        }
+      },500)
+      setTimeout(function(){
+        clearInterval(loading);
+        var err = disqus.find('.disqus-error');
+        if(err.length){
+          err.text('对不起，无法打开评论！');
+          err.css({
+            color: '#ff5722'
+          })
+        }
+      }, 6000)
     }
     var $w = this.$w,
       disqus = $('#disqus_thread'),
-      debounce = this.debounce;
-    var cb = debounce(function(){
+      throttle = this.throttle;
+    var cb = throttle(function(){
       if($w.scrollTop() + $w.height() + 30 >= disqus.offset().top){
         doOnce();
         $w.off('scroll', cb);
       }
-    }, 30);
+    }, 30, 100);
     if(disqus.length){
       $w.on('scroll', cb);
     }
