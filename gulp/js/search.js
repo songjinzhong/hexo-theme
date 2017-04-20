@@ -590,6 +590,10 @@
             results.append('<ul></ul>');
             var maxResult = 10;
             var flag = false;
+            var blogData = this.blogData;
+            searchResult = searchResult.sort(function(a, b){
+                return blogData[a.ref].pubDate >= blogData[b.ref].pubDate ? -1 : 1;
+            })
             for (var i = 0; i < searchResult.length; i++) {
                 if(i >= maxResult){
                     flag = true;
