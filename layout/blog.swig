@@ -9,6 +9,7 @@
 			<div class="left-part">
 				{% include 'includes/article_sort.swig' %}
 {# 			{% include 'includes/weibo.swig' %}#}
+				{% include 'includes/github-part.swig' %}
 			</div>
 			<div class="recent-one">
 				{% include 'includes/recent-one.swig' %}
@@ -24,7 +25,7 @@
 			{% include 'includes/duoshuo.swig' %}
 		</div> #}
 		<div class="disqus-part">
-			{% include 'includes/disqus.swig' %}
+			{# {% include 'includes/disqus.swig' %} #}
 		</div>
 		{% include 'includes/web-info.swig' %}
 	</div>

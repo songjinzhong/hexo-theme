@@ -34,5 +34,14 @@
 	 			loading : '<div class="load"><i class="loading-icon"></i></div><h3 class="loading">正在从 GitHub 加载中...</h3>'
 	 		});
 	 	</script>
+
+	{% elseif page.layout == 'blog' %}
+		<script type="text/javascript">
+			$('.from-gh').showProjects({
+	 			name : 'songjinzhong',
+	 			loading : '<div class="load"><i class="loading-icon"></i></div><h3 class="loading">正在从 GitHub 加载中...</h3>'
+	 		});
+		</script>
+
 	{% endif %}
 {% endif %}

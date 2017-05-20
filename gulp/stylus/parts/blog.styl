@@ -1,302 +1,321 @@
 .blog-content{
-    margin 50px auto 10px
-    max-width 1000px
-    
-    /*
-     * overview css is here!
-     */
-    & .overview{
-        font-size: 28px;
-        line-height: 40px;
-        margin-bottom: 20px;
-        & a{
-            color #4a75b5
+	margin 50px auto 10px
+	max-width 1000px
+	
+	/*
+	 * overview css is here!
+	 */
+	& .overview{
+		font-size: 28px;
+		line-height: 40px;
+		margin-bottom: 20px;
+		& a{
+			color #4a75b5
+		}
+		& a:hover{
+			color black
+		}
+		& font.last{
+			color #999
+			font-size 24px
+		}
+		& .web-feed{
+			float right
+			font-size 23px
+			color #ef593e
+			&:before{
+				font-family 'icomoon'
+				content: "\ea9b"
+			}
+		}
+		& .search-icon{
+			cursor pointer
+			float right
+			font-size 23px
+			color #ef593e
+			margin-left 5px
+			&:hover{
+				color black
+			}
+		}
+	}
+	/*
+	 * content css is here!   
+	 *   
+	 */
+	& .content{
+		/*
+		 * left part
+		 */
+		& .left-part{
+			float left
+			& .archives_sort{
+				width 300px
+				border 1px solid #ccc
+				padding 15px
+				margin-bottom 10px
+				& h2{
+					font-size 22px
+					font-weight normal
+					border-bottom 1px dashed #ccc
+					max-width 100%
+					line-height 2
+					margin-bottom 15px
+				}
+				& ul{
+					list-style-type circle
+					padding-left 20px
+					& li{
+						line-height 28px
+						margin-bottom 5px
+						& span{
+							color: #999;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+			// & .weibo-frame{
+			//     height 750px
+			//     border 1px solid #ccc
+			// }
+      & .github-star{
+        height 750px
+        width 300px
+        border 1px solid #ccc
+        padding 15px
+        overflow-y auto
+        & h2{
+          font-size 22px
+          font-weight normal
+          border-bottom 1px dashed #ccc
+          max-width 100%
+          line-height 2
+          margin-bottom 15px
         }
-        & a:hover{
-            color black
+      }
+		}
+		/*
+		 * right part recent-one   
+		 */
+		& .recent-one,.recent-two{
+			float right
+			width 620px
+			padding 15px
+			background #f3f3f3
+			border-radius 2px
+			box-shadow 2px 2px 4px #e2e2e2
+			& span.aboutme{
+					text-align right
+					font-size 14px
+					display block
+					& a{
+						color #9E9E9E
+						border: 1px dashed #9E9E9E;
+						padding: 5px;
+						&:hover{
+							color black
+							text-decoration none
+							border-color red
+						}
+					}
+				}
+			& h3{
+				font-size 22px
+				line-height 2
+				border-bottom 1px dashed #ccc
+				padding-left 15px
+				@media (max-width: 641px){
+					padding-left 2px    
+				}
+			}
+			& .post-info{
+				display block
+				font-size: 14px;
+				color: #999;
+				line-height 1.5
+				margin 5px 0 10px 0
+				& span:first-child{
+					color black
+				}
+				& span a{
+					color #4a75b5
+				}
+				& span a:hover{
+					color black
+				}
+			}
+			& .post-content{
+				& .post-image{
+					float: right;
+					width: 120px;
+					margin-left 10px
+					margin-top -20px
+					max-height 150px
+					overflow: hidden;
+				}
+				& p{
+					font-size: 15px;
+					line-height: 30px;
+					text-indent: 2em;
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+					border-bottom: 1px dashed #ccc;
+					& a{
+						color #4a75b5
+					}
+				}
+			}
+		}
+		& .recent-two{
+			margin-top 15px
+		}
+		& .recent-posts{
+			float right
+			margin-bottom 30px
+			width 620px
+			padding 15px
+			& h2{
+				font-size: 22px;
+				font-weight: normal;
+				border-bottom: 1px dashed #ccc;
+				max-width: 100%;
+				line-height: 2;
+				margin-bottom: 15px;
+				margin-top: 40px;
+				& a{
+					float right
+					font-size 18px
+					margin-top 10px
+					font-weight bold
+					font-style italic
+				}
+			}
+			& ul{
+				padding-left 30px
+				list-style-type: disc;
+				& li{
+					line-height 28px
+					margin-bottom 7px
+					& span{
+						color #999
+					}
+					& a{
+						color #4a75b5
+					}
+				}
+			}
+		}
+	}
+	/*
+	 * disqus part css   
+	 */
+	& .disqus-part{
+		margin-top 30px
+		clear both
+	}
+	/*
+	 * web-info css here   
+	 */
+	& .web-info{
+		margin-top 25px
+		padding-bottom 10px
+		color #aaa
+		text-align right
+		border-top 1px solid #666
+		padding-top 10px
+		text-align center
+		font-size 14px
+		& a{
+			color #4a75b5
+		}
+	}
+	/*
+	 * max-width 1001px   
+	 */
+	@media (max-width: 1001px){
+		max-width 650px
+		& .content{
+			& .left-part{
+				& .archives_sort{
+					width 618px
+					& ul{
+						padding-left 0
+						& li{
+							display inline-block
+							margin 0 10px
+							&:last-child{
+								& a{
+									text-decoration underline
+								}
+							}
+						}
+					}
+				}
+				// & .weibo-frame{
+				//     display none
+				//     height 0
+				// }
+				& .github-star{
+          display none
+          height 0
         }
-        & font.last{
-            color #999
-            font-size 24px
-        }
-        & .web-feed{
-            float right
-            font-size 23px
-            color #ef593e
-            &:before{
-                font-family 'icomoon'
-                content: "\ea9b"
-            }
-        }
-        & .search-icon{
-            cursor pointer
-            float right
-            font-size 23px
-            color #ef593e
-            margin-left 5px
-            &:hover{
-                color black
-            }
-        }
-    }
-    /*
-     * content css is here!   
-     *   
-     */
-    & .content{
-        /*
-         * left part
-         */
-        & .left-part{
-            float left
-            & .archives_sort{
-                width 300px
-                border 1px solid #ccc
-                padding 15px
-                margin-bottom 10px
-                & h2{
-                    font-size 22px
-                    font-weight normal
-                    border-bottom 1px dashed #ccc
-                    max-width 100%
-                    line-height 2
-                    margin-bottom 15px
-                }
-                & ul{
-                    list-style-type circle
-                    padding-left 20px
-                    & li{
-                        line-height 28px
-                        margin-bottom 5px
-                        & span{
-                            color: #999;
-                            font-size: 12px;
-                        }
-                    }
-                }
-            }
-            // & .weibo-frame{
-            //     height 750px
-            //     border 1px solid #ccc
-            // }
-        }
-        /*
-         * right part recent-one   
-         */
-        & .recent-one,.recent-two{
-            float right
-            width 620px
-            padding 15px
-            background #f3f3f3
-            border-radius 2px
-            box-shadow 2px 2px 4px #e2e2e2
-            & span.aboutme{
-                    text-align right
-                    font-size 14px
-                    display block
-                    & a{
-                        color #9E9E9E
-                        border: 1px dashed #9E9E9E;
-                        padding: 5px;
-                        &:hover{
-                            color black
-                            text-decoration none
-                            border-color red
-                        }
-                    }
-                }
-            & h3{
-                font-size 22px
-                line-height 2
-                border-bottom 1px dashed #ccc
-                padding-left 15px
-                @media (max-width: 641px){
-                    padding-left 2px    
-                }
-            }
-            & .post-info{
-                display block
-                font-size: 14px;
-                color: #999;
-                line-height 1.5
-                margin 5px 0 10px 0
-                & span:first-child{
-                    color black
-                }
-                & span a{
-                    color #4a75b5
-                }
-                & span a:hover{
-                    color black
-                }
-            }
-            & .post-content{
-                & .post-image{
-                    float: right;
-                    width: 120px;
-                    margin-left 10px
-                    margin-top -20px
-                    max-height 150px
-                    overflow: hidden;
-                }
-                & p{
-                    font-size: 15px;
-                    line-height: 30px;
-                    text-indent: 2em;
-                    padding-bottom: 15px;
-                    margin-bottom: 15px;
-                    border-bottom: 1px dashed #ccc;
-                    & a{
-                        color #4a75b5
-                    }
-                }
-            }
-        }
-        & .recent-two{
-            margin-top 15px
-        }
-        & .recent-posts{
-            float right
-            margin-bottom 30px
-            width 620px
-            padding 15px
-            & h2{
-                font-size: 22px;
-                font-weight: normal;
-                border-bottom: 1px dashed #ccc;
-                max-width: 100%;
-                line-height: 2;
-                margin-bottom: 15px;
-                margin-top: 40px;
-                & a{
-                    float right
-                    font-size 18px
-                    margin-top 10px
-                    font-weight bold
-                    font-style italic
-                }
-            }
-            & ul{
-                padding-left 30px
-                list-style-type: disc;
-                & li{
-                    line-height 28px
-                    margin-bottom 7px
-                    & span{
-                        color #999
-                    }
-                    & a{
-                        color #4a75b5
-                    }
-                }
-            }
-        }
-    }
-    /*
-     * disqus part css   
-     */
-    & .disqus-part{
-        margin-top 30px
-        clear both
-    }
-    /*
-     * web-info css here   
-     */
-    & .web-info{
-        margin-top 25px
-        padding-bottom 10px
-        color #aaa
-        text-align right
-        border-top 1px solid #666
-        padding-top 10px
-        text-align center
-        font-size 14px
-        & a{
-            color #4a75b5
-        }
-    }
-    /*
-     * max-width 1001px   
-     */
-    @media (max-width: 1001px){
-        max-width 650px
-        & .content{
-            & .left-part{
-                & .archives_sort{
-                    width 618px
-                    & ul{
-                        padding-left 0
-                        & li{
-                            display inline-block
-                            margin 0 10px
-                            &:last-child{
-                                & a{
-                                    text-decoration underline
-                                }
-                            }
-                        }
-                    }
-                }
-                // & .weibo-frame{
-                //     display none
-                //     height 0
-                // }
-            }
-        }
-    }
-    /*
-     * max-width 801px
-     */
-    @media (max-width: 801px){
-        max-width 600px
-        & .content{
-            & .left-part{
-                & .archives_sort{
-                    width 568px
-                }
-            }
-            & .recent-one,.recent-two,.recent-posts{
-                width 568px
-            }
-        }
-        & .web-info span{
-            display none
-        }
-    }
-    /*
-     * max-width 641px   
-     */
-    @media (max-width: 641px){
-        width 100%
-        box-sizing border-box
-        padding 0 10px
-        min-width 200px
-        & .overview .web-feed{
-            margin-right 10px
-        }
-        & .content{
-            box-sizing border-box
-            width 100%
-            & .left-part{
-                box-sizing border-box
-                width 100%
-                & .archives_sort{
-                    box-sizing border-box
-                    width 100%
-                }
-            }
-            & .recent-one,.recent-two,.recent-posts{
-                box-sizing border-box
-                width 100%
-            }
-            & .recent-one .post-content,.recent-two .post-content{
-                & .post-image{
-                    margin-top 0px
-                }
-                & p{
-                    text-indent 0
-                }
-            }
-        }
-    }
+			}
+		}
+	}
+	/*
+	 * max-width 801px
+	 */
+	@media (max-width: 801px){
+		max-width 600px
+		& .content{
+			& .left-part{
+				& .archives_sort{
+					width 568px
+				}
+			}
+			& .recent-one,.recent-two,.recent-posts{
+				width 568px
+			}
+		}
+		& .web-info span{
+			display none
+		}
+	}
+	/*
+	 * max-width 641px   
+	 */
+	@media (max-width: 641px){
+		width 100%
+		box-sizing border-box
+		padding 0 10px
+		min-width 200px
+		& .overview .web-feed{
+			margin-right 10px
+		}
+		& .content{
+			box-sizing border-box
+			width 100%
+			& .left-part{
+				box-sizing border-box
+				width 100%
+				& .archives_sort{
+					box-sizing border-box
+					width 100%
+				}
+			}
+			& .recent-one,.recent-two,.recent-posts{
+				box-sizing border-box
+				width 100%
+			}
+			& .recent-one .post-content,.recent-two .post-content{
+				& .post-image{
+					margin-top 0px
+				}
+				& p{
+					text-indent 0
+				}
+			}
+		}
+	}
 }
