@@ -25,7 +25,7 @@
 			{% include 'includes/duoshuo.swig' %}
 		</div> #}
 		<div class="disqus-part">
-			{# {% include 'includes/disqus.swig' %} #}
+			{% include 'includes/disqus.swig' %}
 		</div>
 		{% include 'includes/web-info.swig' %}
 	</div>
