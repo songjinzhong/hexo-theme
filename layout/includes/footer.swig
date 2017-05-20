@@ -37,10 +37,27 @@
 
 	{% elseif page.layout == 'blog' %}
 		<script type="text/javascript">
-			$('.from-gh').showProjects({
-	 			name : 'songjinzhong',
-	 			loading : '<div class="load"><i class="loading-icon"></i></div><h3 class="loading">正在从 GitHub 加载中...</h3>'
-	 		});
+			(function(){
+				var flag = true;
+				var insertGP = function(){
+					if(flag && $('.blog-content').width() > 650){
+						flag = false;
+						$('.from-gh').showProjects({
+				 			name : 'songjinzhong',
+				 			loading : '<div class="load"><i class="loading-icon"></i></div><h3 class="loading">正在从 GitHub 加载中...</h3>'
+				 		});
+			  	}
+				}
+
+				insertGP();
+
+				if(flag){
+					$(window).on("resize", function() {
+						insertGP();
+					});
+				}
+
+			})()
 		</script>
 
 	{% endif %}
