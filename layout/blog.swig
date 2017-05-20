@@ -8,7 +8,7 @@
 		<div class="content clear">
 			<div class="left-part">
 				{% include 'includes/article_sort.swig' %}
-				{% include 'includes/weibo.swig' %}
+{# 			{% include 'includes/weibo.swig' %}#}
 			</div>
 			<div class="recent-one">
 				{% include 'includes/recent-one.swig' %}
